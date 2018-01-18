@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|发票签收</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>       
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.css">          
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body class="fapiaoqs">
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu"></div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <div class="pagetop">
+                <ul class="pagetopmenu">
+                  <!-- 当前栏目在li上添加active类 -->
+                  <li class="active"><a href="">发票签收</a></li>
+                </ul>              
+                <div class="pbtn">
+                      <a class="btn btn-default" href="javascript:void(0)"  data-toggle="modal" data-target="#fpfkjl" >录入</a>                  
+                       <a href="djcon-fapiao.html" class="btn btn-default" >新建 </a> 
+                </div>
+            </div>
+            <div class="djlisttop">
+                <div class="pull-left">共32张单据   已勾选12张</div>
+                <!-- 通用搜索 -->
+                <div class="searchbox pull-right">
+                   <input type="text" class="form-control" placeholder="请输入搜索关键词">
+                   <button class="btn btn-default" >搜索</button>
+                </div>
+                <!-- 通用搜索 结束-->   
+            </div>             
+               <!-- 列表开始 -->
+               <div class="listbox">  
+                   <table class="table table-bordered table-hover"> 
+                  <thead>
+                    <tr>
+                      <th width="40"></th>
+                      <th><a href="">开票日期 <img src="images/up1.png" alt=""></a></th>
+                      <th><a href="">客户  <img src="images/up1.png" alt=""></a></th>
+                      <th><a href="">开票金额  <img src="images/up2.png" alt=""></a></th>
+                      <th><a href="">签收  <img src="images/up2.png" alt=""></a></th>
+                      <th><a href="">签收日期 <img src="images/up1.png" alt=""></a></th>
+                      <th width="120">操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>                   
+                      <tr>
+                        <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_1" value="option"><label class="el-checkbox-style " for="1_1"></td>
+                        <td>2017/01/01</td>
+                        <td>深圳市嫘祖丝绸有限公司</td>
+                        <td>¥ 1,800</td>
+                        <td>姓名姓名</td>
+                        <td>2017年11月3日</td>
+                        <td><a href="" class="blue">点击查看回单</a></td>
+                      </tr>
+                      <tr>
+                        <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_2" value="option"><label class="el-checkbox-style " for="1_2"></td>
+                        <td>2017/01/01</td>
+                        <td>深圳市嫘祖丝绸有限公司</td>
+                        <td>¥ 1,800</td>
+                        <td>姓名姓名</td>
+                        <td>2017年11月3日</td>
+                        <td><a href="" class="blue">点击查看回单</a>　</td>
+                      </tr>
+                      <tr>
+                        <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_3" value="option"><label class="el-checkbox-style " for="1_3"></td>
+                        <td>2017/01/01</td>
+                        <td>深圳市嫘祖丝绸有限公司</td>
+                        <td>¥ 1,800</td>
+                        <td>姓名姓名</td>
+                        <td>2017年11月3日</td>
+                        <td><a href="" class="blue">点击查看回单</a>　</td>
+                      </tr>
+                  </tbody>               
+                </table>
+               </div>
+               <!-- 列表结束 -->                
+            
+            <!-- 通用分页 -->
+                <nav class="page" aria-label="Page navigation">
+                  <ul class="pagination">
+                    <!-- 给不可点击的添加.disabled类 -->
+                    <li class="disabled">
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true"><</span>
+                      </a>
+                    </li>
+                    <!-- 给当前页添加.active类 -->
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- 通用分页 结束-->
+           
+        </div>
+        <!-- 页面右侧内容 结束-->
+
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+<!-- 添加付款记录层 -->
+<div class="modal fade bs-example-modal-sm" id="fpfkjl" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">添加付款记录</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered table-hover inputtable">
+          <tr>
+            <th width="">开票日期</th>
+            <th width="250">客户</th>
+            <th width="">金额</th>
+          </tr>
+          <tr>
+            <td align="center"><input type="text" class="form-control datepicker" data-provide="datepicker" placeholder="请选择日期"></td>
+            <td align="center">
+            <!-- 下拉菜单 -->
+                          <div class="dropdown ">
+                              <input type="text" class="form-control text-left" placeholder="请填写" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                              <div class="dropdown-menu hetongdiv" aria-labelledby="Khchose">
+                                <div class="scrollbar-rail">
+                                <ul>                           
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                                  <li><a href="">深圳市娅奴实业有限公司</a></li>                                           
+                                </ul>
+                              </div>
+                              </div>
+                            </div>
+                            <!-- 下拉菜单 -->
+            </td>
+            <td align="center"><input type="text" class="form-control" placeholder="" value="¥ 4,562,343.00"></td>
+          </tr>         
+        </table>
+       <div class="cungen"> 
+                  <div class="pull-left" style="width:180px;"> 
+                    <h3>上传凭证</h3> 
+                    <div class="inputbox"><span>选择文件</span><input id="hetongUpload3" type="file" /></div>
+                    <div class="in2"><input type="text" class="form-control" placeholder="签收人"></div>
+                    <div class="in3"><input type="text" class="form-control datepicker" data-provide="datepicker" placeholder="签收时间"></div>
+                  </div>                   
+                 <div id="hetong-holder3"  class="pull-right"> 没有预览可用 </div>
+                </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+      </div>      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 添加付款记录层 结束-->
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js --> 
+<script type="text/javascript" src="js/jquery.scrollbar.js"></script> <!-- 自定义滚动条 -->
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+     // 激活自定义滚动条
+         jQuery('.scrollbar-rail').scrollbar();
+    })
+  </script> 
+
+
+</body>
+</html>

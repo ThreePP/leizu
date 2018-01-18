@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|退货单</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.css">  
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body>
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu"></div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <div class="pagetop">
+                <h2>退货单</h2>
+                <div class="pbtn"><button class="btn btn-default" onclick="jQuery.print('#printbox')">打印</button></div>
+            </div>
+            <!-- 打印表格主体 -->
+            <div id="printbox" class="tableprint">
+                <h1>深圳市嫘祖丝绸有限公司退货单<span class="pull-right nospan">No.42563584</span></h1>
+                
+                <table class="table table-bordered table-hover">     
+                  <caption>
+                    <div class="pull-left mtop">客户：深圳市嫘祖丝绸有限公司 </div>
+                    <div class="pull-right">
+                      <p>2017年11月3日</p>
+                    </div>  
+                    <div class="clear"></div>
+                    </caption> 
+                  <thead>
+                    <tr>
+                      <th width="140">编号</th>
+                      <th width="139">品类</th>
+                      <th width="139">规格</th>
+                      <th width="139">单价</th>
+                      <th width="139">数量</th>
+                      <th width="139">金额</th>
+                    </tr>
+                  </thead>
+                  <tbody>                   
+                      <tr>
+                      <td align="center">18063  </td>
+                      <td align="center">弹力缎</td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="right">¥1,800.00</td>
+                    </tr>
+                    <tr>
+                      <td align="center">18063  </td>
+                      <td align="center">弹力缎</td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="right">¥1,800.00</td>
+                    </tr>
+                    <tr>
+                      <td align="center">18063  </td>
+                      <td align="center">弹力缎</td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="right">¥1,800.00</td>
+                    </tr>
+                    <tr>
+                      <td align="center">18063  </td>
+                      <td align="center">弹力缎</td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="right">¥1,800.00</td>
+                    </tr>
+                    <tr>
+                      <td align="center">18063  </td>
+                      <td align="center">弹力缎</td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="center"></td>
+                      <td align="right">¥1,800.00</td>
+                    </tr>
+                     <tr>
+                      <td align="center">合计</td> 
+                      <td colspan="5" align="right">¥1,8000.00</td>
+                    </tr>
+                    <tr>
+                      <td align="center">备注</td> 
+                      <td colspan="6" >
+                        
+                      </td>
+                    </tr>
+                  </tbody>               
+                </table>
+               
+                <div class="songqian">
+                  <span class="pull-left">退货:<b>张维怡</b></span><span class="pull-right">签收:<b>张维怡</b></span>
+                </div>
+                <!-- 上传存根预览,预览程序见main.js -->
+                <div class="cungen no-print"> 
+                  <div class="pull-left"> 
+                    <h3>退货单扫描存根</h3> 
+                    <div class="inputbox"><span>选择文件</span><input id="fileUpload" type="file" /></div> 
+                    <div class="in2"><input type="text" class="form-control" placeholder="签收人"></div>
+                    <div class="in3"><input type="text" class="form-control datepicker" data-provide="datepicker" placeholder="签收时间"></div>
+                    <p>仅支持JPG、PNG、JPEG格式，文件小于4M</p>
+                  </div>                   
+                 <div id="image-holder"  class="pull-right"> 没有预览可用 </div>
+                </div>
+
+                <div class="void"></div>
+            </div>
+            <!-- 打印表格主体 结束-->
+            <p align="right"><a href="javascript:void(0)" class="blue voidbtn">作废</a></p>
+        </div>
+        <!-- 页面右侧内容 结束-->
+
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+      
+    })
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|合同详情</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body>
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu"></div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <div class="pagetop pagetop2">               
+                <div class="pbtn contractbtn">
+                  <button class="btn btn-default" onclick="jQuery.print('#printbox')">打印预览</button> 
+                  <button class="btn btn-default">保存草稿</button> 
+                  <button class="btn btn-default">确认签订</button>
+                </div>
+            </div>
+            <!-- 打印表格主体 -->
+            <div id="printbox" class="tableprint">
+               <h2 class="hetongtitle"><div class="pull-left">
+                <p>深圳市嫘祖丝绸有限公司购销合同</p>
+                <p class="leixin">类型：销售合同 </p>
+              </div>
+                <span class="pull-right">打印日期：2017-10-31</span></h2>            
+               
+                <div class="partytwo">
+                  <p>购方合同号：C7103</p>
+                  <p>购方：深圳市娅奴实业有限公司</p>
+                  <p>联络：张晓娜，+86 134 2416 8545   0755-26060600</p>
+                </div>
+                <div class="partytwo">
+                  <p>销方合同号：C7103</p>
+                  <p>销方：深圳市嫘祖丝绸有限公司</p>
+                  <p>联络：张维怡，+86 186 5858 7600   0755-26060600</p>
+                </div>
+
+                <div class="contarttitle"><span>明细 </span>  </div>
+
+                   <table id="addCtable2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>购方编码</th>
+                        <th>销方编号</th>
+                        <th>色号</th>
+                        <th>品类/成分</th>
+                        <th>克重</th>
+                        <th>门幅</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>金额</th>
+                        <th>交货日期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>18118</td>
+                        <td>FN-7641</td>
+                        <td>仿真丝</td>
+                        <td>聚酯纤维聚酯纤 <br>聚酯纤维聚酯纤</td>
+                        <td>120.0g/m <br>12.0momme</td>
+                        <td>150.0 cm</td>
+                        <td>¥29.00</td>
+                        <td>1000.0</td>
+                        <td>¥29000.00</td>
+                        <td>10个工作日 <br>2017-12-05</td>
+                      </tr>
+                      <tr>
+                        <td>18118</td>
+                        <td>FN-7641</td>
+                        <td>仿真丝</td>
+                        <td>聚酯纤维聚酯纤<br> 聚酯纤维聚酯纤</td>
+                        <td>120.0g/m <br>12.0momme</td>
+                        <td>150.0 cm</td>
+                        <td>¥29.00</td>
+                        <td>1000.0</td>
+                        <td>¥29000.00</td>
+                        <td>10个工作日<br> 2017-12-05</td>
+                      </tr>                        
+                    </tbody>               
+                  </table>
+                 <table class="table table-bordered table-hover allmoneytable" style="border-top:0;">
+                    <tr>
+                        <td align="center" ><span class="pull-left">合计</span><span class="allmoney text-right pull-right"><b class="bigtxt">¥2,230.00</b></span>
+                        </td>
+                      </tr>  
+                  </table> 
+
+                  <div class="contarttitle"><span>品质标准 </span> <a href="javascript:void(0)" id="pzbzBtn" class="blue no-print pull-right">收起</a> </div>
+                  <div id="pzbzTable">
+                   <table class="table table-bordered  table-hover">
+                    <thead>
+                      <tr>
+                        <th>项目名称</th>
+                        <th>达标要求</th>
+                        <th>方法标准</th>
+                        <th>项目名称</th>
+                        <th>达标要求</th>
+                        <th>方法标准</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                        <td>纤维成分</td>
+                        <td>±3%</td>
+                        <td>FZ/T01057-2007,<br>GB/T2910-2009</td>
+                        <td>芳香胺染料</td>
+                        <td>禁用</td>
+                        <td>GB18401-2010</td>
+                      </tr>
+                      <tr>
+                        <td>克重</td>
+                        <td>X±3GSM</td>
+                        <td>GB/T2910-2009</td>
+                        <td>耐水/变沾色</td>
+                        <td>≥3</td>
+                        <td>GB/T5713-2013</td>
+                      </tr>
+                      <tr>
+                        <td>门幅</td>
+                        <td>X±3%</td>
+                        <td>-</td>
+                        <td>耐汗渍/变沾色</td>
+                        <td>≥3</td>
+                        <td>GB/T5713-2013</td>
+                      </tr>
+                      <tr>
+                        <td>甲醛含量</td>
+                        <td>≤75 mg/kg</td>
+                        <td>GB18401-2010</td>
+                        <td>耐干摩擦</td>
+                        <td>≥3</td>
+                        <td>GB/T5713-2013</td>
+                      </tr>
+                      <tr>
+                        <td>PH值</td>
+                        <td>4.0~8.5</td>
+                        <td>GB/T2912.1-2009</td>
+                        <td>耐湿摩擦</td>
+                        <td>≥3</td>
+                        <td>GB/T5713-2013</td>
+                      </tr>
+                      <tr>
+                        <td>异味</td>
+                        <td>无</td>
+                        <td>GB/T7573-2009</td>
+                        <td>水洗尺寸变化率</td>
+                        <td>经≥-3.5%  纬≥-2</td>
+                        <td>GB/T5713-2013</td>
+                      </tr>
+                      <tr>
+                        <td>纰裂/接缝性能</td>
+                        <td>≤0.6cm</td>
+                        <td>FZ/T81004-2012</td>
+                        <td>干洗尺寸变化率</td>
+                        <td>≥3</td>
+                        <td>GB/T5713-2013</td>
+                      </tr>
+                      <tr>
+                        <td>起毛起球</td>
+                        <td>≥3</td>
+                        <td>GB/T4802.1-2008 </td>
+                        <td>交货总数量</td>
+                        <td>±5%</td>
+                        <td></td>
+                      </tr>                       
+                    </tbody>               
+                  </table>
+                  </div>
+                  <div class="partytwo">
+                  <h3 class="contracth3">付款方式 <span>三期支付</span></h3>
+                  <p>第一期：定金30%（20,000.00）合同签订后支付  </p>
+                  <p>第二期：中期50%（23,000.00）付款后发货</p>
+                  <p>第三期：尾款20%</p>
+                </div>
+                <div class="partytwo">
+                  <h3 class="contracth3">收货地址</h3>
+                  <p>联络：张晓娜</p>
+                  <p>电话：+86 134 2416 8545，010-12345678</p>
+                  <p>地址：深圳市龙华新区大浪街道水泰路95号</p>
+                </div>
+                <h3 class="contracth4">合同签订 </h3>
+                <div class="partytwo">                  
+                  <p>购方：深圳市娅奴实业有限公司</p>
+                  <p>纳税人识别号：12345678-0987654367</p>
+                  <p>开户银行：工商银行</p>
+                  <p>银行账号：21343465547</p>
+                  <p>签字签章：</p>
+                </div>
+                <div class="partytwo">
+                  <p>销方：深圳市嫘祖丝绸有限公司</p>
+                  <p>纳税人识别号：91440300088301632T</p>
+                  <p>收款开户银行：中国工商银行深圳市分行</p>
+                  <p>收款账户号码：4000023009201298257</p>
+                  <p>签字签章：</p>
+                </div>
+
+
+               </div>        
+            <!-- 打印表格主体 结束-->           
+           
+        </div>
+        <!-- 页面右侧内容 结束-->
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+
+
+</body>
+</html>

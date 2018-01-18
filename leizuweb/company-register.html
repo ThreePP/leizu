@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|企业用户注册</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.css"><!-- 日期插件 -->
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body>
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 二级标题 -->
+<div class="secondtop">
+    <div class="secondcon">
+        <h1>企业用户注册</h1>
+    </div>
+</div>
+<!-- 二级标题 结束-->
+<!-- 页面主体 -->
+<div class="main">
+      <div class="companyregister">
+        <div class="crhead">         
+          <!-- 变黑的内容添加active类  --> 
+          <span class="no active">1</span>
+          <span class="title active">注册账号</span>
+          <span class="line"></span>
+          <span class="no">2</span>
+          <span class="title">提交资料</span>
+          <span class="line"></span>
+          <span class="no">3</span>
+          <span class="title">审核资料</span>
+        </div>
+        <div class="crcon">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">账户信息</h3>
+              </div>
+              <div class="panel-body">
+                <div class="infoline"><span>公司账号：</span>  <input type="text" class="form-control" placeholder="请输入公司银行账号"></div>
+                <div class="infoline"><span>密码：</span>  <input type="text" class="form-control" placeholder="请输入6位数以上数字和英文组合的密码"></div>
+                <div class="infoline"><span>确认密码:</span>  <input type="text" class="form-control" placeholder="请再次输入相同密码"></div>
+              </div>
+            </div>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">公司信息</h3>
+              </div>
+              <div class="panel-body">
+                <div class="infoline"><span>公司名称：</span>  <input type="text" class="form-control" placeholder="请输入公司全称"></div>
+                <div class="infoline"><span>社会信用代码:</span>  <input type="text" class="form-control" placeholder="请输入统一社会信用代码注册"></div>
+                <div class="infoline"><span>地区：</span> 
+                  <!-- 城市选择插件  -->                    
+                    <div class="citychose">
+                      <div class="form-group">
+                        <label class="sr-only" for="province10">Province</label>
+                        <select class="form-control" id="province10"></select>
+                      </div>
+                      <div class="form-group">
+                        <label class="sr-only" for="city10">City</label>
+                        <select class="form-control" id="city10"></select>
+                      </div>                      
+                    </div>
+                </div>
+                <div class="infoline"><span>详细地址：</span>  <input type="text" class="form-control" placeholder="请输入详细地址"></div>
+                <div class="infoline"><span>法人姓名：</span>  <input type="text" class="form-control" placeholder="请输入法人真实姓名"></div>
+                <div class="infoline"><span>法人生日：</span>  <input type="text" class="form-control datepicker" data-provide="datepicker" placeholder="请选择日期"> </div>
+              </div>
+            </div>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">联系人信息</h3>
+              </div>
+              <div class="panel-body">
+                <div class="infoline"><span>姓名：</span>  <input type="text" class="form-control" placeholder="请输入真实姓名"></div>
+                <div class="infoline"><span>手机：</span>  <input type="text" class="form-control" placeholder="请输入11位手机号码"></div>
+                <div class="infoline"><span>座机：</span>  <input type="text" class="form-control" placeholder="请输入固定电话"></div>
+                <div class="infoline"><span>邮箱：</span>  <input type="text" class="form-control" placeholder="请输入邮箱"></div>
+
+                <a class="btn btn-default"  href="company-register2.html">立即注册</a>
+                <p class="el-checkbox"> <input type="checkbox" name="checkbox1" id="1_1" value="option"><label class="el-checkbox-style " for="1_1">  我已同意<a class="blue" href="protocol.html">《用户注册协议》</a></label></p>
+              </div>
+            </div>
+
+        </div>
+      </div>     
+                   
+             
+       
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script src="js/distpicker.data.min.js"></script><!-- 城市选择js -->
+<script src="js/distpicker.min.js"></script><!-- 城市选择js -->
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+      $('.citychose').distpicker({
+         autoSelect: false,
+         province: '请选择省市',
+         city: '全部'
+
+        });   
+
+    })
+  </script>
+
+</body>
+</html>

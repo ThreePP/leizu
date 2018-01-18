@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|实名认证</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body class="realname">
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu"></div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <div class="pagetop">
+                <h3>实名认证</h3>               
+            </div>
+            <div class="realnamebox">
+              <div class="infoline"><span>姓名:</span>  <input type="text" class="form-control" placeholder=""></div>
+              <div class="infoline"><span>身份证号码：</span>  <input type="text" class="form-control" placeholder=""></div>
+             
+              <div class="infoline">
+                <span>身份证正面：</span>  
+                <div class="myphoto">
+                    <div class="inputbox"><span>选择文件</span><input id="fileUpload1" type="file" /></div> 
+                    <p>仅支持JPG、PNG、JPEG格式，文件小于4M</p>                                   
+                    <div id="image-holder1"  class="imageholdbox"> 没有预览可用 </div>                    
+                  </div>
+                <span>身份证反面：</span>  
+                <div class="myphoto">
+                    <div class="inputbox"><span>选择文件</span><input id="fileUpload2" type="file" /></div> 
+                    <p>仅支持JPG、PNG、JPEG格式，文件小于4M</p>                                   
+                    <div id="image-holder2"  class="imageholdbox"> 没有预览可用 </div>                    
+                  </div>
+              </div>
+
+              <div class="infoline">
+                <span>手持身份证：</span>  
+                <div class="myphoto">
+                    <div class="inputbox"><span>选择文件</span><input id="fileUpload3" type="file" /></div> 
+                    <p>仅支持JPG、PNG、JPEG格式，文件小于4M</p>                                   
+                    <div id="image-holder3"  class="imageholdbox"> 没有预览可用 </div>
+                    <a class="btn btn-default bubble"  href="">保存</a>
+                  </div>
+              </div>
+
+               
+            </div>
+        </div>
+        <!-- 页面右侧内容 结束-->
+
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+</body>
+</html>

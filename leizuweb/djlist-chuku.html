@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|销售出库</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>       
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body class="djchuku">
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu"></div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <div class="pagetop">
+                <ul class="pagetopmenu">
+                  <!-- 当前栏目在li上添加active类 -->
+                  <li class="active"><a href="">未对账</a></li>
+                  <li><a href="">已对账</a></li>
+                  <li><a href="">已完成</a></li>
+                </ul>              
+                <div class="pbtn">
+                  <a href="" class="btn btn-default">生成对账</a>
+                  <div class="dropdown">
+                       <a href="" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">新建 <span class="caret"></span>
+                      </a>                     
+                      <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="addnewchuku.html">出库单</a></li>
+                        <li><a href="addnewtuihuo.html">退货单</a></li>
+                        <li><a href="addnewkousun.html">扣损单</a></li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="djlisttop">
+                <div class="pull-left">共32张单据   已勾选12张</div>
+                <!-- 通用搜索 -->
+                <div class="searchbox pull-right">
+                   <input type="text" class="form-control" placeholder="请输入搜索关键词">
+                   <button class="btn btn-default" >搜索</button>
+                </div>
+                <!-- 通用搜索 结束-->   
+            </div>             
+               <!-- 列表开始 -->
+               <div class="listbox">  
+                   <table class="table table-bordered table-hover"> 
+                  <thead>
+                    <tr>
+                      <th width="40"></th>
+                      <th><a href="">类型 <img src="images/up1.png" alt=""></a></th>
+                      <th><a href="">单据号  <img src="images/up1.png" alt=""></a></th>
+                      <th><a href="">客户  <img src="images/up1.png" alt=""></a></th>
+                      <th><a href="">金额  <img src="images/up2.png" alt=""></a></th>
+                      <th><a href="">签收  <img src="images/up2.png" alt=""></a></th>
+                      <th><a href="">日期 <img src="images/up1.png" alt=""></a></th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>                   
+                      <tr>
+                        <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_1" value="option"><label class="el-checkbox-style " for="1_1"></td>
+                        <td>出库</td>
+                        <td><a href="djcon-chuku.html">123456789</a></td>
+                        <td>深圳市嫘祖丝绸有限公司</td>
+                        <td>¥ 1,800</td>
+                        <td>姓名姓名</td>
+                        <td>2017年11月3日</td>
+                        <td><a href="" class="blue">点击查看回单</a>　<a href="addnewchuku.html" class="blue">编辑</a></td>
+                      </tr>
+                      <tr>
+                        <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_2" value="option"><label class="el-checkbox-style " for="1_2"></td>
+                        <td>退货</td>
+                        <td><a href="djcon-tuihuo.html">123456789</a></td>
+                        <td>深圳市嫘祖丝绸有限公司</td>
+                        <td>¥ 1,800</td>
+                        <td>姓名姓名</td>
+                        <td>2017年11月3日</td>
+                        <td><a href="" class="blue">点击查看回单</a>　<a href="addnewtuihuo.html" class="blue">编辑</a></td>
+                      </tr>
+                      <tr>
+                        <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_3" value="option"><label class="el-checkbox-style " for="1_3"></td>
+                        <td>扣损</td>
+                        <td><a href="djcon-kousun.html">123456789</a></td>
+                        <td>深圳市嫘祖丝绸有限公司</td>
+                        <td>¥ 1,800</td>
+                        <td>姓名姓名</td>
+                        <td>2017年11月3日</td>
+                        <td><a href="" class="blue">点击查看回单</a>　<a href="addnewkousun.html" class="blue">编辑</a></td>
+                      </tr>
+                  </tbody>               
+                </table>
+               </div>
+               <!-- 列表结束 -->                
+            
+            <!-- 通用分页 -->
+                <nav class="page" aria-label="Page navigation">
+                  <ul class="pagination">
+                    <!-- 给不可点击的添加.disabled类 -->
+                    <li class="disabled">
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true"><</span>
+                      </a>
+                    </li>
+                    <!-- 给当前页添加.active类 -->
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- 通用分页 结束-->
+           
+        </div>
+        <!-- 页面右侧内容 结束-->
+
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+
+
+</body>
+</html>

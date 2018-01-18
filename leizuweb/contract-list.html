@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|合同列表</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body class="contract1">
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu"></div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <div class="pagetop">
+                <ul class="pagetopmenu">
+                  <!-- 当前栏目在li上添加active类 -->
+                  <li class="active"><a href="">所有待签合同</a></li>
+                  <li><a href="">待签采购合同</a></li>
+                  <li><a href="">待签加工合同</a></li>
+                  <li><a href="">待签销售合同</a></li>
+                </ul>     
+                <div class="pbtn"><a href="contract-new.html" class="btn btn-default">录入合同</a> <a href="contract-add.html" class="btn btn-default">新建合同</a></div>
+            </div>
+            <!-- 打印表格主体 -->
+            <div id="printbox" class="tableprint">
+                <!-- 通用搜索 -->
+                <div class="searchbox grayform">
+                   <input type="text" class="form-control" placeholder="商品名称/订单号">
+                   <button class="btn btn-default" >搜索</button>
+                </div>
+                <!-- 通用搜索 结束-->                
+               <!-- 列表开始 -->
+               <div class="listbox">  
+                   <table class="table table-bordered table-hover"> 
+                    <thead>
+                      <tr>
+                        <th>预览</th>
+                        <th>合同信息</th>
+                        <th>产品规格</th>
+                        <th>生产类型</th>
+                        <th>单价及数量</th>
+                        <th>操作</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <!-- 列表循环,一项开始  -->                   
+                       <tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="contract-txt.html" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr>
+                     <!-- 列表循环,一项开始  结束-->
+
+                      <!-- 填充页面的假数据 -->
+                        <tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr><tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="contract-txt.html" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr><tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="contract-txt.html" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr><tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="contract-txt.html" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr><tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="contract-txt.html" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr><tr>
+                          <td align="center"><img src="sjimg/1.png" alt=""> </td>
+                          <td>
+                            <p>合同编号：C4873454515454   </p>
+                            <p>类型：采购</p>
+                            <p>客户：C68745 深圳市嫘祖丝绸有限公司</p>
+                            <p>签订日期：2017-10-31</p>
+                            <p>合同交期：2017-11-31</p>
+                          </td>
+                          <td>
+                            <p>编号：18062 </p>
+                            <p>品类：篾青绉 </p>
+                            <p>成分：36.5S 23.5L 40V </p>
+                            <p>克重：22m/m </p>
+                            <p>门幅：120㎝</p>
+                          </td>
+                          <td>
+                            <p>类型：数码 </p>
+                            <p>花色：CN-S001</p>
+                          </td>
+                          <td>
+                            <p>121.00 元/米 </p>
+                            <p>10,000.0 米 </p>
+                            <p>1,210,000.00 元</p>
+                          </td>
+                          <td align="center">
+                            <p><a href="contract-txt.html" class="blue">查看详情</a></p>
+                            <p><a href="" class="blue">删除草稿</a></p>
+                          </td>
+                        </tr>
+
+                        <!-- 填充页面的假数据 结束-->
+                    </tbody>               
+                  </table> 
+               </div>
+               <!-- 列表结束 -->                
+            </div>
+            <!-- 打印表格主体 结束-->
+            <!-- 通用分页 -->
+                <nav class="page" aria-label="Page navigation">
+                  <ul class="pagination">
+                    <!-- 给不可点击的添加.disabled类 -->
+                    <li class="disabled">
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true"><</span>
+                      </a>
+                    </li>
+                    <!-- 给当前页添加.active类 -->
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- 通用分页 结束-->
+           
+        </div>
+        <!-- 页面右侧内容 结束-->
+
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+
+
+</body>
+</html>
