@@ -50,6 +50,23 @@ $("#patUpload2").on('change', function () {
         alert("你的浏览器不支持FileReader.");
     }
 });
+//我的花型页面上传图片放大
+
+$(".addbtn").on('click',function () {
+    var wid = $("#pattern-holder img").width();
+    var hei = $("#pattern-holder img").height();
+    //alert("1");
+    $("#pattern-holder img").css({"width":(wid+50)+"px","height":(hei+50)+"px"})
+    return false;
+})
+//我的花型页面上传图片缩小
+$(".rebtn").on('click', function () {
+    var wid = $("#pattern-holder img").width();
+    var hei = $("#pattern-holder img").height();
+    //console.log(wid,hei);
+    $("#pattern-holder img").css({"width":(wid-50)+"px","height":(hei-50)+"px"})
+    return false;
+})
 
 // 录入合同页面单据上传预览
 $("#hetongUpload").on('change', function () { 
