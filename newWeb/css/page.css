@@ -14,7 +14,7 @@
 .cungen p{color:#999;}
 .cungen .in2,.cungen .in3{float:left;width: 150px;height:30px;margin:0 0 15px 15px;}
 .cungen .in2 .form-control,.cungen .in3 .form-control{height:30px;font-size: 14px;}
-.in2 .form-control{background: url(../images/choblue.png) no-repeat 130px center;}
+.in2 .form-control{background: url(../images/chogray.png) no-repeat 130px center;}
 .in3 .form-control,.in3 .form-control.datepicker {background: url(../images/chogray.png) no-repeat 130px center;}
 
 /*花型上传选择*/
