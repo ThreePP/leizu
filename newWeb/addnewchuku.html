@@ -100,9 +100,9 @@
                       </td>
                       <td><input type="text" class="form-control" placeholder="" value="弹力缎"></td>
                       <td><input type="text" class="form-control" placeholder=""></td>
-                      <td><input type="text" class="form-control" placeholder=""></td>
-                      <td><input type="text" class="form-control" placeholder=""></td>
-                      <td><input type="text" class="form-control text-right" placeholder="" onchange="numberFormat(this)" value=""></td>
+                      <td><input id='p1' type="text" class="form-control" placeholder="" onchange="priceFormat(this)" value="0"></td>
+                      <td><input id='n1' type="text" class="form-control" placeholder="" onchange="numberFormat(this)" value="0"></td>
+                      <td><input id='t1' type="text" class="form-control text-right" placeholder="" value="0"></td>
                       <td align="center"><a href="" class="blue">清空</a></td>
                     </tr>
                     <tr>
@@ -169,9 +169,34 @@
     app.controller('chukuCtrl', function($scope) {
         $scope.price;
     });
-    function numberFormat(obj) {
+    function priceFormat(obj) {
       var num = numeral(obj.value).format('0,0.00');
       obj.value = '¥'+num;
+      getTotal(num,'price',obj.id.slice(1, 2));
+    }
+    function numberFormat(obj){
+      var num = numeral(obj.value).format('0.00');
+      obj.value = num;
+      getTotal(num,'number',obj.id.slice(1, 2));
+    }
+    function getTotal(num,type,id){
+      alert(num);
+      var priceId = 'p'+ id;
+      var numberId = 'n'+ id;
+      var totalId = 't'+ id;
+      var totalValue;
+      var subtotal = document.getElementById('t1');
+
+      if(type == 'price'){
+        var q = document.getElementById(numberId);
+        totalValue = numeral(num * q.value).format('0,0.00');
+        subtotal.value =  totalValue;
+      }else if(type == 'number'){
+        var pv = document.getElementById(priceId);
+        totalValue = numeral(num * pv.value.split('¥')[1]).format('0,0.00');
+        subtotal.value = totalValue;
+      }
+      
     }
     
    
