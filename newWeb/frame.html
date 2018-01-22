@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|库存产品 </title>
+       
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://code.angularjs.org/1.2.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+        <script src="js/app.js"></script>      
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body class="kucun" ng-app="myApp">
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 页面主体 -->
+<div class="main">
+        <!-- 左侧导航 -->
+        <div class="leftmenu" id="LeftMenu">
+            <!-- 通用左侧导航栏 -->
+            <div class="leftmenucon">
+            <!-- 面板组1-账号资料 -->
+                <div class="panel panel-zhzl">
+                <div class="panel-heading">账号资料</div>
+                <div class="panel-body">                        
+                        <a id="MyInfo" href="myinfo.html">个人资料</a>
+                        <a id="Safety" href="safety.html">账户安全</a>
+                        <a id="RealName" href="realname.html">实名认证</a>
+                        <a id="Address" href="address.html">收货地址</a>
+                </div>
+                </div>
+                <!-- 面板组1-账号资料 结束-->
+                
+                <!-- 面板组2-会员资产 -->
+                <div class="panel panel-hyzc">
+                <div class="panel-heading">会员资产</div>
+                <div class="panel-body"> 
+                        <a id="MemberInfo" href="memberinfo.html">会员信息</a>
+                        <a id="Wallet" href="wallet.html">电子钱包</a>
+                        <a id="BillList" href="bill-list.html">发票信息</a>
+                </div>
+                </div>
+                <!-- 面板组2-会员资产 结束-->
+
+                <!-- 面板组3-订单中心 -->
+                <div class="panel panel-ddzx">
+                <div class="panel-heading">订单中心</div>
+                <div class="panel-body"> 
+                        <a id="OrserList" href="orders-list.html">我的订单</a>
+                        <a id="OrserList1" href="orders-list.html">发货订单</a>
+                        <a id="OrserList2" href="orders-list.html">退货订单</a>
+                        <a id="OrserList3" href="orders-list.html">返修订单</a>
+                </div>
+                </div>
+                <!-- 面板组3-订单中心 结束-->
+
+                <!-- 面板组4-所有产品 -->
+                <div class="panel panel-sycp">
+                <div class="panel-heading">所有产品</div>
+                <div class="panel-body"> 
+                        <a id="ChouDuan" href="chouduan.html">出口绸缎</a>                        
+                        <a id="GoodsList" href="goodslist.html">产品档案</a>
+                        <!-- <a id="KuCun" href="kucun.html">库存明细</a> -->
+                        <a id="YanPin" href="yangpin.html">展厅样品</a>
+                        <a id="Pattern" href="pattern.html">我的花型</a>
+                        <a id="Color" href="color.html">我的颜色</a>
+                </div>
+                </div>
+                <!-- 面板组4-所有产品 结束-->
+                <!-- 面板组8-生产排单 -->
+                <div class="panel panel-scpd">
+                <div class="panel-heading">生产排单</div>
+                <div class="panel-body"> 
+                        <a id="YinHua" href="djlist-paichan.html">印花排单</a>
+                        <a id="RanSe" href="djlist-paichan2.html">染色排单</a>
+                </div>
+                </div>
+                <!-- 面板组8-生产排单 结束-->
+                <!-- 面板组5-出库入库 -->
+                <div class="panel panel-ckrk">
+                <div class="panel-heading">出库入库</div>
+                <div class="panel-body">
+                        <a id="HuiZong" href="huizonglist.html">出库入库</a> 
+                        <a ui-sref="djlist-chuku" ui-sref-active="active">出库登记</a>
+                        <a id="DjRuku" href="djlist-ruku.html">入库登记</a>
+                        <a id="DjLingsun" href="djlist-lingsun.html">生产领用</a>
+                        <a id="DjTiaozheng" href="djlist-lingsun.html">库存调整</a>
+                </div>
+                </div>
+                <!-- 面板组5-出库入库 结束-->
+                <!-- 面板组9-对账开票 -->
+                <div class="panel panel-dzkp">
+                <div class="panel-heading">对账开票</div>
+                <div class="panel-body">
+                        <a id="XiaoShouYs" href="djlist-yingshou.html">销售应收</a> 
+                        <a id="FaPiaoQs" href="djlist-fapiao.html">发票签收</a>
+                        <a id="ChengBenYf" href="djlist-yingshou.html">成本应付</a>
+                        <a id="JiaGongYf" href="djlist-yingshou.html">加工应付</a>
+                </div>
+                </div>
+                <!-- 面板组9-出库入库 结束-->
+
+                <!-- 面板组6-所有合同 -->
+                <div class="panel panel-hetong">
+                <div class="panel-heading">所有合同</div>
+                <div class="panel-body"> 
+                        <a id="Contract1" href="contract-list.html">采购合同</a>
+                        <a id="Contract2" href="contract-list.html">加工合同</a>
+                        <a id="Contract3" href="contract-list.html">销售合同</a>
+                        <a id="Contract4" href="contract-list.html">合同草稿</a>
+                </div>
+                </div>
+                <!-- 面板组6-所有合同 结束-->
+
+                <!-- 面板组7-关注中心 -->
+                <div class="panel panel-gzzx">
+                <div class="panel-heading">关注中心</div>
+                <div class="panel-body"> 
+                        <a id="Collection" href="collection.html">收藏商品</a>
+                        <a id="ShopNews" href="">商城消息</a>                      
+                </div>
+                </div>
+                <!-- 面板组7-关注中心 结束-->
+            </div>
+            <!-- 左侧导航 结束-->
+
+        </div>
+        <!-- 左侧导航 结束-->
+        
+        <!-- 页面右侧内容 -->
+        <div class="pagemain">
+            <ui-view></ui-view>
+        </div>
+        <!-- 页面右侧内容 结束-->
+
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+  <!-- 编辑浮出层 -->
+<div class="modal fade bs-example-modal-sm" id="gkrk" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">编辑</h4>
+      </div>
+      <div class="modal-body">
+         内容
+        
+        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+      </div>      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 编辑浮出层 结束-->
+
+ 
+
+</body>
+</html>
