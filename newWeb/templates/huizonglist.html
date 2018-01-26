@@ -1,0 +1,24 @@
+
+<div class="pagetop">
+    <ul class="pagetopmenu">
+      <!-- 当前栏目在li上添加active类 -->
+      <li class="active">
+        <a ui-sref-active="active" ui-sref="huizong.all">所有单据</a>
+      </li>
+      <li>
+        <a ui-sref-active="active" ui-sref="huizong.chuku">出库单</a>
+      </li>
+      <li><a ui-sref-active="active" ui-sref="huizong.tuihuo">退货单</a></li>
+      <li><a ui-sref-active="active" ui-sref="huizong.kousun">扣损单</a></li>
+      <li><a ui-sref-active="active" ui-sref="huizong.ruku">入库单</a></li>
+      <li><a ui-sref-active="active" ui-sref="huizong.lingliao">领料单</a></li>
+      <li><a ui-sref-active="active" ui-sref="huizong.tiaozheng">库存调整</a></li>
+    </ul>  
+    <div class="pbtn"><button class="btn btn-default" data-toggle="modal" data-target="#gkrk">挂卡入库</button></div>
+</div>
+<!-- 打印表格主体 -->
+<div ui-view id="printbox" class="tableprint">
+
+
+</div>
+<!-- 页面右侧内容 结束-->

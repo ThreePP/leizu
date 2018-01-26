@@ -7,7 +7,7 @@ $("#HeaderShop").load("general.html .headershopcon");
 // 载入页脚
 $("#FootLine").load("general.html .footcon");
 // 载入通用左侧导航
-$("#LeftMenu").load("general.html .leftmenucon");
+// $("#LeftMenu").load("general.html .leftmenucon");
 // 载入合同页面左侧栏
 // $("#ContractLeftMenu").load("general.html .contractcon");
 // 载入登陆层内容

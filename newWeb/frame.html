@@ -9,8 +9,11 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="https://code.angularjs.org/1.2.7/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-        <script src="js/app.js"></script>      
+        <script src="js/app.js"></script>
+        <script src="js/controller/chuku.client.controller.js"></script>       
         <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <script type="text/javascript" src="js/numeral.min.js"></script><!-- 格式化数字 -->
+        <script type="text/javascript" src="js/saomiaocungen.js" ></script> <!-- 扫描存根js -->
         <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css"  href="css/main.css">
         <link rel="stylesheet" type="text/css"  href="css/page.css">
@@ -86,11 +89,11 @@
                 <div class="panel panel-ckrk">
                 <div class="panel-heading">出库入库</div>
                 <div class="panel-body">
-                        <a id="HuiZong" href="huizonglist.html">出库入库</a> 
+                        <a ui-sref="huizong" ui-sref-active="active">出库入库</a> 
                         <a ui-sref="djlist-chuku" ui-sref-active="active">出库登记</a>
-                        <a id="DjRuku" href="djlist-ruku.html">入库登记</a>
-                        <a id="DjLingsun" href="djlist-lingsun.html">生产领用</a>
-                        <a id="DjTiaozheng" href="djlist-lingsun.html">库存调整</a>
+                        <a ui-sref="djlist-ruku" ui-sref-active="active">入库登记</a>
+                        <a ui-sref="djlist-lingsun" ui-sref-active="active">生产领用</a>
+                        <a ui-sref="djlist-lingsun" ui-sref-active="active">库存调整</a>
                 </div>
                 </div>
                 <!-- 面板组5-出库入库 结束-->
@@ -99,7 +102,7 @@
                 <div class="panel-heading">对账开票</div>
                 <div class="panel-body">
                         <a id="XiaoShouYs" href="djlist-yingshou.html">销售应收</a> 
-                        <a id="FaPiaoQs" href="djlist-fapiao.html">发票签收</a>
+                        <a ui-sref="djlist-fapiao" ui-sref-active="active">发票签收</a>
                         <a id="ChengBenYf" href="djlist-yingshou.html">成本应付</a>
                         <a id="JiaGongYf" href="djlist-yingshou.html">加工应付</a>
                 </div>
@@ -134,8 +137,8 @@
         <!-- 左侧导航 结束-->
         
         <!-- 页面右侧内容 -->
-        <div class="pagemain">
-            <ui-view></ui-view>
+        <div ui-view class="pagemain">
+            
         </div>
         <!-- 页面右侧内容 结束-->
 
@@ -178,6 +181,9 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- 编辑浮出层 结束-->
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
 
  
 

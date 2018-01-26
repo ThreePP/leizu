@@ -8,6 +8,7 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
         <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <script type="text/javascript" src="js/numeral.min.js"></script><!-- 格式化数字 -->
         <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.css">  
         <link rel="stylesheet" type="text/css"  href="css/main.css">
@@ -20,7 +21,9 @@
 <!-- 页面主体 -->
 <div class="main">
         <!-- 左侧导航 -->
-        <div class="leftmenu" id="LeftMenu"></div>
+        <div class="leftmenu" id="LeftMenu">
+          
+        </div>
         <!-- 左侧导航 结束-->
         
         <!-- 页面右侧内容 -->
@@ -111,10 +114,10 @@
                   </thead>
                   <tbody>                   
                        <tr>
-                        <td>1.1.2</td>
+                        <td>1.1.1</td>
                         <td>Nature</td>
-                        <td>59.0</td>
-                        <td>59.0</td>
+                        <td class='number'>59.0</td>
+                        <td class='number'>59.0</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -123,22 +126,24 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>144.0</td>
+                        <td class='sum-number'>144.0
+                        </td>
                       </tr>
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                          <td>1.1.2</td>
+                          <td>Nature</td>
+                          <td class='number'>59.0</td>
+                          <td class='number'>59.0</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td class='sum-number'>144.0
+                          </td>
                       </tr>
                       <tr>
                         <td></td>
@@ -202,7 +207,7 @@
                       </tr>
                       <tr>
                         <td>合计</td>
-                        <td align="right" colspan="12"><b class="bigtxt">144.0 码</b></td>
+                        <td align="right" colspan="12"><b id='total' class="bigtxt">144.0 </b><b class="bigtxt"> 码</b></td>
                       </tr>
                       <tr>
                         <td>备注</td>
@@ -254,6 +259,7 @@
 <script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js --> 
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/number-format.js"></script>
   <script type="text/javascript">
     $(function(){
       $('.datepicker').datepicker({
@@ -264,5 +270,6 @@
       
     })
   </script>
+
 </body>
 </html>
