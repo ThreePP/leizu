@@ -51,7 +51,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   })
   .state('huizong.all', {
     url: '/all',
-    templateUrl: 'templates/huizonglist-all.html'
+    templateUrl: 'templates/huizonglist-all.html',
+    controller: 'huizongController'
   })
   .state('huizong.chuku', {
     url: '/chuku',

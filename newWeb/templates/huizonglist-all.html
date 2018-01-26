@@ -20,7 +20,7 @@
             <td>¥ 1,800</td>
             <td>姓名姓名</td>
             <td>2017年11月3日</td>
-            <td><a href="" class="blue">点击查看回单</a></td>
+            <td><a href="" class="blue" ng-click="showForm('abf')">点击查看回单</a></td>
         </tr>
         <tr>
             <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_2" value="option"><label class="el-checkbox-style " for="1_2"></label></td>
@@ -100,3 +100,8 @@
 </ul>
 </nav>
 <!-- 通用分页 结束-->
+
+<div id='image-div' ng-hide="formState">
+    <span ng-click='closeForm()'>close</span>
+    <img src="../{{imgUrl}}"/>
+</div>
