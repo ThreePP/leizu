@@ -5,7 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
         <title>嫘祖|印花生产单</title>
-        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <link rel="stylesheet" href="css/leaflet.css"/>
+        <style>
+            #image-map {
+                width:100%;
+                height:300px;
+                border:1px solid #ccc;
+                margin-bottom:10px;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+        <!--<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>-->
         <script type="text/javascript" src="js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
         <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
@@ -65,7 +75,12 @@
                               <!-- 放大缩小按钮 -->
                               <div class="arbtns"><a class="addbtn" href=""></a><a class="rebtn" href=""></a></div>
                               <div class="inputbox"><span>点击上传花型预览图</span><input id="patternUpload" type="file" /></div>
-                              <div id="pattern-holder"></div>
+                              <div id="image-map">
+                                  <!--<span class='zoom' id='ex3'>-->
+                                    <!--<img src='img/women.jpg' width='555' height='320' alt='horse'/>-->
+                                    <!--<p>Click to activate</p>-->
+                                  <!--</span>-->
+                              </div>
                               <!-- 标记组 -->
                               <div class="tabs">
                                 <!-- 修改onetab中style里的left和top值,改变按钮的位置 -->
@@ -214,6 +229,10 @@
 <script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+<!--<script src='js/jquery.zoom.js'></script>-->
+<script src="js/leaflet.js"></script>
+
+
   <script type="text/javascript">
     $(function(){
       $('.datepicker').datepicker({
@@ -221,7 +240,9 @@
         language: 'zh-CN'
 
       });
-
+//      $(document).ready(function () {
+//          $('#ex3').zoom({ on:'click' });
+//      })
     })
   </script> 
 
