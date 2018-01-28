@@ -29,9 +29,38 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/djlist-lingsun.html'
   });
 
-  $stateProvider.state('djlist-yingshou', {
-    url: '/djlist-yingshou',
-    templateUrl: 'templates/djlist-yingshou.html'
+  // $stateProvider.state('djlist-yingshou', {
+  //   url: '/djlist-yingshou',
+  //   templateUrl: 'templates/djlist-yingshou.html'
+  // });
+
+  $stateProvider
+    .state('fapiaolist', {
+        url: "/fapiaolist/:type",
+        templateUrl: 'templates/djlist-yingshou.html',
+        controller: function ($stateParams) {
+            // If we got here from a url of /contacts/42
+            expect($stateParams).toBe({type: "yingshou"});
+        }
+    });
+  
+  // $stateProvider
+  // .state('duizhang', {
+  //     url: "/duizhang/:id",
+  //     templateUrl: 'templates/duizhang.html',
+  //     controller: function ($stateParams) {
+  //         // If we got here from a url of /contacts/42
+  //         expect($stateParams).toBe({id: "123456789"});
+  //     }
+  // });
+
+  $stateProvider.state('duizhang', {
+    url: '/duizhang',
+    templateUrl: 'templates/duizhang.html',
+    // controller: function ($stateParams) {
+    //   // If we got here from a url of /contacts/42
+    //   //expect($stateParams).toBe({id: "yingshou"});
+    // }
   });
 
   $stateProvider.state('addnewchuku', {
