@@ -33,11 +33,28 @@ $("#fileUpload").on('change', function () {
 // 印花生产单页面花型上传,预览
 $("#patternUpload").on('change', function () { 
     var thisbtn= $("#patternUpload");
-    UpLoadImg(thisbtn,'#pattern-holder'); 
+    Effects(thisbtn,'#image-map');
+    $(".inputbox span").css("display","none");
 });
 
+//印花生产单页面上传图片放大
+/*$(".addbtn").on('click',function () {
+    var wid = $("#pattern-holder img").width();
+    var hei = $("#pattern-holder img").height();
+    //alert("1");
+    $("#image-map img").css({"width":(wid+50)+"px","height":(hei+50)+"px"})
+    return false;
+})
+//印花生产单页面上传图片缩小
+$(".rebtn").on('click', function () {
+    var wid = $("#pattern-holder img").width();
+    var hei = $("#pattern-holder img").height();
+    //console.log(wid,hei);
+    $("#image-map img").css({"width":(wid-50)+"px","height":(hei-50)+"px"})
+    return false;
+})*/
 // 我的花型页面花型上传预览
-$("#patUpload").on('change', function () { 
+$("#patUpload").on('change', function () {
     var thisbtn= $("#patUpload");
     UpLoadImg(thisbtn,'#pat-holder'); 
 
@@ -50,7 +67,6 @@ $("#patUpload2").on('change', function () {
         alert("你的浏览器不支持FileReader.");
     }
 });
-
 // 录入合同页面单据上传预览
 $("#hetongUpload").on('change', function () { 
     var thisbtn= $("#hetongUpload");
@@ -434,13 +450,56 @@ var UpLoadImg = function(c1,c2){
         reader.onload = function (e) {
             $("<img />", {
                 "src": e.target.result,
-                "class": "thumb-image"
-            }).appendTo(image_holder);          
+                "class": "thumb-image",
+                "id": "new-image"
+            }).appendTo(image_holder);
+            //console.log(e.target.result);
         }
+
         image_holder.show();
         reader.readAsDataURL(c1[0].files[0]);
     } else {
         alert("你的浏览器不支持FileReader.请使用IE10以上版本.");
     }
     
+};
+//<img src='img/women.jpg' width='555' height='320' alt='horse'/>
+var Effects = function(c1,c2){
+    if (typeof (FileReader) != "undefined") {
+        var image_holder = $(c2);
+        image_holder.empty();
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $("<img />", {
+                "src": e.target.result,
+                "class": "thumb-image",
+                "id": "new-image"
+            }).appendTo(image_holder);
+            //console.log(e.target.result);
+            var map = L.map('image-map',{
+                minZoom:1,
+                maxZoom:4,
+                center:[0,0],
+                zoom:1,
+                crs: L.CRS.Simple
+            });
+
+            var w = 2000,
+                h = 1500,
+                url = e.target.result;
+            var southWest = map.unproject([0,h],map.getMaxZoom()-1);
+            var northEast = map.unproject([w,0],map.getMaxZoom()-1);
+            var bounds = new L.LatLngBounds(southWest,northEast);
+
+            L.imageOverlay(url,bounds).addTo(map);
+
+            map.setMaxBounds(bounds);
+        }
+
+        image_holder.show();
+        reader.readAsDataURL(c1[0].files[0]);
+    } else {
+        alert("你的浏览器不支持FileReader.请使用IE10以上版本.");
+    }
+
 };
