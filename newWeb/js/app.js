@@ -29,6 +29,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/djlist-lingsun.html'
   });
 
+  $stateProvider.state('djlist-yingshou', {
+    url: '/djlist-yingshou',
+    templateUrl: 'templates/djlist-yingshou.html'
+  });
+
   $stateProvider.state('addnewchuku', {
     url: '/addnewchuku',
     templateUrl: 'templates/addnewchuku.html',
