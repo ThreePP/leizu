@@ -1,4 +1,4 @@
-myApp.controller('huizongController', [ '$scope', function($scope) {
+myApp.controller('huizongController', function($scope) {
    $scope.formState = true;
    $scope.imgUrl;
    $scope.showForm = function(id){
@@ -10,4 +10,4 @@ myApp.controller('huizongController', [ '$scope', function($scope) {
     $scope.formState = true;
   }
 
-}]);
+});

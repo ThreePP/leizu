@@ -1,6 +1,6 @@
 <div class="pagetop">
     <h2>出库单</h2>
-    <div class="pbtn"><a href="addchukumingxi.html" class="btn btn-default">新建出库明细</a> <button class="btn btn-default" onclick="jQuery.print('#printbox')">打印</button></div>
+    <div class="pbtn"><a ui-sref="addchukumingxi" ui-sref-active="active" class="btn btn-default">新建出库明细</a> <button class="btn btn-default" ng-click="printToCart('printbox')">打印</button></div>
 </div>
 <!-- 打印表格主体 -->
 <div id="printbox" class="tableprint">
@@ -77,10 +77,12 @@
         </tr>
       </tbody>               
     </table>
-    
+ 
     <div class="songqian">
       <span class="pull-left">送货: <b>张维怡</b></span><span class="pull-right">签收: <b>张维怡</b></span>
     </div>
+  </div>
+  <!-- 打印表格主体 结束-->  
     <!-- 上传存根预览,预览程序见main.js -->
     <div class="cungen no-print"> 
       <div class="pull-left"> 
@@ -94,8 +96,7 @@
     </div>
 
     <div class="void"></div>
-</div>
-<!-- 打印表格主体 结束-->
+
 <p align="right"><a href="javascript:void(0)" class="blue voidbtn">作废</a></p>
 <script>
   // 上传存根预览

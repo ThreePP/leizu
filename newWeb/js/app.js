@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ui.router','ngAnimate']);
+var myApp = angular.module('myApp', ['ui.router']);
 
 myApp.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -33,6 +33,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     url: '/addnewchuku',
     templateUrl: 'templates/addnewchuku.html',
     controller: 'chukuController'
+  });
+
+  $stateProvider.state('addchukumingxi', {
+    url: '/addchukumingxi',
+    templateUrl: 'templates/addchukumingxi.html',
+    controller: 'chukuMingxiController'
   });
   
   // stateHelperProvider.setNestedState({
@@ -81,7 +87,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   
   $stateProvider.state('djconchuku', {
     url: '/djconchuku',
-    templateUrl: 'templates/djcon-chuku.html'
+    templateUrl: 'templates/djcon-chuku.html',
+    controller: 'djconChukuController'
   });
 
   
@@ -96,7 +103,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   // $urlRouterProvider.when('/huizong', '/huizong/all');
   
                       
-})
+});
 /*
 angular.module('hellogalaxy').component('hello', {
   template:  '<h3>{{$ctrl.greeting}} Solar System!</h3>' +

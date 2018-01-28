@@ -25,7 +25,7 @@ function qianshou(){
 	$("#qianshourenname2").blur(function(){
 		var qianshouren2=$("#qianshourenname2").val();
 		if(qianshouren2!=''){
-			$("#qianshourenname2").css("background-image","url(./images/choblue.png)");
+			$("#qianshourenname2").css("background-image","url(./images/chogray.png)");
 			var shijian2=new Date();
 			var mydate2=shijian2.getFullYear()+"年"+(shijian2.getMonth()+1)+"月"+shijian2.getDate()+"日";
 			$("#qianshoushijian2").val(mydate2);
