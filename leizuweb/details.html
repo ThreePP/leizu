@@ -111,14 +111,15 @@
                   <div class="popover top" style="left:30px;">
                     <div class="arrow"></div>
                     <div class="popover-content">
-                      <a href="">-</a><input type="text" class="form-control" placeholder="" value="10000"><a href="">+</a><p>30天</p>                     
+                      <a id="minus" href="javascript:void(0);">-</a><input id="specific" type="text" class="form-control" placeholder="" value="10000"><a href="javascript:void(0);" id="add">+</a><p>30天</p>
                     </div>
                   </div>
                   <div class="left">0</div>
-                  <div class="linebox">
-                    <div class="linecon" style="width:100px;"></div>
-                    <div class="dott" style="left:100px;"><img src="images/dott.png" alt=""></div>
-                  </div>
+                  <!--<div class="linebox">-->
+                    <!--<div class="linecon" style="width:100px;"></div>-->
+                    <!--<div class="dott" style="left:100px;"><img src="images/dott.png" alt=""></div>-->
+                  <!--</div>-->
+                    <input id="control" class="linebox" type="range" min="0" max="10000" step="50"/>
                   <div class="right">10,000.0 米</div>
                 </div>
               <!-- 滑动条 结束-->
@@ -676,7 +677,27 @@
 
             // 激活自定义滚动条
          $('.scrollbar-rail').scrollbar();
-         
+
+            var col = document.getElementById("control");
+            var min = document.getElementById("minus");
+            var add = document.getElementById("add");
+            col.addEventListener("change", function () {
+//                console.log(this.value);
+                showVal(this.value);
+            })
+            function showVal(newVal) {
+                document.getElementById("specific").value=newVal;
+            }
+            min.addEventListener("click", function () {
+                var val = document.getElementById("specific");
+//                var step = 5;
+//               console.log(val.value--);
+                val.value--;
+            })
+            add.addEventListener("click", function () {
+                var val = document.getElementById("specific");
+                val.value++;
+            })
 
        });
     </script>
