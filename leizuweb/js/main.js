@@ -36,6 +36,7 @@ $("#patternUpload").on('change', function () {
     Effects(thisbtn,'#image-map');
     $(".inputbox span").css("display","none");
 });
+    
 
 //印花生产单页面上传图片放大
 /*$(".addbtn").on('click',function () {

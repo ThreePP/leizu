@@ -111,7 +111,7 @@
                   <div class="popover top" style="left:30px;">
                     <div class="arrow"></div>
                     <div class="popover-content">
-                      <a id="minus" href="javascript:void(0);">-</a><input id="specific" type="text" class="form-control" placeholder="" value="10000"><a href="javascript:void(0);" id="add">+</a><p>30天</p>
+                      <a id="minus" href="javascript:void(0);">-</a><input id="specific" type="text" class="form-control" placeholder="0"><a href="javascript:void(0);" id="add">+</a><p>30天</p>
                     </div>
                   </div>
                   <div class="left">0</div>
@@ -681,22 +681,39 @@
             var col = document.getElementById("control");
             var min = document.getElementById("minus");
             var add = document.getElementById("add");
+            var spc = document.getElementById("specific");
             col.addEventListener("change", function () {
-//                console.log(this.value);
                 showVal(this.value);
             })
             function showVal(newVal) {
                 document.getElementById("specific").value=newVal;
             }
+            //数量增加
             min.addEventListener("click", function () {
                 var val = document.getElementById("specific");
-//                var step = 5;
-//               console.log(val.value--);
                 val.value--;
+                col.stepUp(-1);
+                console.log(col.value);
+                if(val.value <= 0) {
+                    val.value = "0";
+                }
             })
+
+            //数量减少
             add.addEventListener("click", function () {
                 var val = document.getElementById("specific");
                 val.value++;
+                col.stepUp(1);
+                console.log(col.value);
+                if(val.value >= 10000) {
+                    val.value = "10000";
+                }
+            })
+
+            spc.addEventListener("change", function () {
+                console.log(this.value);
+                col.value = this.value;
+                console.log(col.value);
             })
 
        });
