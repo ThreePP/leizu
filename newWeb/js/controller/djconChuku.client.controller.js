@@ -1,23 +1,41 @@
-myApp.controller('djconChukuController', function($scope) {
-    $scope.printToCart = function(printSectionId) {
-    //   var innerContents = document.getElementById(printSectionId).innerHTML;
-    //   var popupWinindow = window.open('', '_blank', 'width=600,height=700,scrollbars=no,menubar=no,toolbar=no,location=no,status=no,titlebar=no');
-    //   popupWinindow.document.open();
-    //   popupWinindow.document.write('<html><head>'+
-    //   '<link rel="stylesheet" type="text/css" href="css/page.css" />'+
-    //   '<link rel="stylesheet" type="text/css" href="css/main.css" />'+
-    //   '<link rel="stylesheet" type="text/css" href="css/photor.css" />'+
-    //   '<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />'+
-    //   '</head><body>' + innerContents + 
-    //   '<a href="" class="button" onclick="window.print()">Print</a>' +
-    //   '</body></html>');
-    //   popupWinindow.document.close();
+myApp.controller('djconChukuController', function($scope,$stateParams) {
+  $scope.receiptDetail = {
+    records:[{
+      number:'18063',
+      category:'弹力缎',
+      norm:'',
+      price:'10.00',
+      quantity:'10',
+      amount:'100.00',
+    },
+    {
+      number:'18063',
+      category:'弹力缎',
+      norm:'',
+      price:'10.00',
+      quantity:'10',
+      amount:'100.00',
+    },
+    {
+      number:'18063',
+      category:'弹力缎',
+      norm:'',
+      price:'10.00',
+      quantity:'10',
+      amount:'100.00',
+    }],
+    subTotal:'300.00'
+  };
+  
 
-      var printContents = document.getElementById(printSectionId).innerHTML;
-      var originalContents = document.body.innerHTML;        
-      document.body.innerHTML = printContents;
-      //window.document.open();
-      window.print();
-      document.body.innerHTML = originalContents;
-    }
+  /**打印预览 */
+  $scope.printToCart = function(printSectionId) {
+    var printContents = document.getElementById(printSectionId).innerHTML;
+    var originalContents = document.body.innerHTML;        
+    document.body.innerHTML = printContents;
+    //window.document.open();
+    window.print();
+    document.body.innerHTML = originalContents;
+  }
+
 });

@@ -95,7 +95,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   });
   
   $stateProvider.state('djconchuku', {
-    url: '/djconchuku',
+    url: '/djconchuku/:receiptId',
     templateUrl: 'templates/djcon-chuku.html',
     controller: 'djconChukuController'
   });

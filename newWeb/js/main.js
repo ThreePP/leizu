@@ -20,15 +20,15 @@ $("#companysigninModal").load("general.html .companysignincon");
 // 激活弹出消息
  $('[data-toggle="popover"]').popover()
 
-// 上传存根预览
-$("#fileUpload").on('change', function () {
-   var thisbtn= $("#fileUpload");
-   var text = $(this).parents(".inputbox").children('span').text();
-    UpLoadImg(thisbtn,'#image-holder'); 
-    $(this).parents(".inputbox").children('span').text(text === '选择文件' ? '编辑' : '编辑'); 
+// // 上传存根预览
+// $("#fileUpload").on('change', function () {
+//    var thisbtn= $("#fileUpload");
+//    var text = $(this).parents(".inputbox").children('span').text();
+//     UpLoadImg(thisbtn,'#image-holder'); 
+//     $(this).parents(".inputbox").children('span').text(text === '选择文件' ? '编辑' : '编辑'); 
 
 
-});
+// });
 
 // 印花生产单页面花型上传,预览
 $("#patternUpload").on('change', function () { 

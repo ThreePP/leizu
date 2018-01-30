@@ -160,23 +160,23 @@
       <tbody>                   
           <tr ng-repeat='row in rows'>
             <td></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td><input type="text" class="form-control" placeholder=""></td>
-            <td align="center">{{subTotal}}</td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.box'></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model="row.color"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n1' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n2' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n3' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n4' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n5' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n6' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n7' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n8' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n9' ng-change="getSubTotal(this,$index)"></td>
+            <td><input type="text" class="form-control" placeholder="" ng-model='row.n10' ng-change="getSubTotal(this,$index)"></td>
+            <td align="center">{{row.subTotal}}</td>
           </tr>
           <tr>
             <td align="center">合计</td>
-            <td class="allmoney text-right" colspan="13"><b class="bigtxt">{{total}} 码</b></td>
+            <td class="allmoney text-right" colspan="13"><b class="bigtxt">{{amount}} 码</b></td>
           </tr>
           <tr>
             <td align="center">备注</td>

@@ -12,14 +12,14 @@
         </tr>
     </thead>
     <tbody>                   
-        <tr>
+        <tr ng-repeat="receipt in receipts">
             <td class="el-checkbox" align="center"><input type="checkbox" name="checkbox1" id="1_1" value="option"><label class="el-checkbox-style " for="1_1"></label></td>
-            <td>出库</td>
-            <td><a ui-sref-active="active" ui-sref="djconchuku">123456789</a></td>
-            <td>深圳市嫘祖丝绸有限公司</td>
-            <td>¥ 1,800</td>
-            <td>姓名姓名</td>
-            <td>2017年11月3日</td>
+            <td>{{receipt.type}}</td>
+            <td><a ui-sref-active="active" ui-sref="djconchuku({receiptId:receipt.receiptId})">{{receipt.receiptId}}</a></td>
+            <td>{{receipt.customerName}}</td>
+            <td>{{receipt.amount}}</td>
+            <td>{{receipt.signIn}}</td>
+            <td>{{receipt.signInDate}}</td>
             <td><a href="" class="blue" ng-click="showForm('abf')">点击查看回单</a></td>
         </tr>       
     </tbody>               

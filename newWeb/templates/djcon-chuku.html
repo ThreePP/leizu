@@ -25,49 +25,17 @@
         </tr>
       </thead>
       <tbody>                   
-          <tr>
-          <td align="center">18063  </td>
-          <td align="center">弹力缎</td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="right">¥1,800.00</td>
+          <tr ng-repeat='record in receiptDetail.records'>
+          <td align="center">{{record.number}}</td>
+          <td align="center">{{record.category}}</td>
+          <td align="center">{{record.norm}}</td>
+          <td align="center">{{record.price}}</td>
+          <td align="center">{{record.quantity}}</td>
+          <td align="right">{{record.amount}}</td>
         </tr>
         <tr>
-          <td align="center">18063  </td>
-          <td align="center">弹力缎</td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="right">¥1,800.00</td>
-        </tr>
-        <tr>
-          <td align="center">18063  </td>
-          <td align="center">弹力缎</td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="right">¥1,800.00</td>
-        </tr>
-        <tr>
-          <td align="center">18063  </td>
-          <td align="center">弹力缎</td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="right">¥1,800.00</td>
-        </tr>
-        <tr>
-          <td align="center">18063  </td>
-          <td align="center">弹力缎</td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="right">¥1,800.00</td>
-        </tr>
-          <tr>
           <td  align="center">合计</td> 
-          <td colspan="5" align="right">¥1,8000.00</td>
+          <td colspan="5" align="right">{{receiptDetail.subTotal}}</td>
         </tr>
         <tr>
           <td  align="center">备注</td> 
@@ -99,13 +67,13 @@
 
 <p align="right"><a href="javascript:void(0)" class="blue voidbtn">作废</a></p>
 <script>
-  // 上传存根预览
-$("#fileUpload").on('change', function () {
-  var thisbtn= $("#fileUpload");
-  var text = $(this).parents(".inputbox").children('span').text();
-   UpLoadImg(thisbtn,'#image-holder'); 
-   $(this).parents(".inputbox").children('span').text(text === '选择文件' ? '编辑' : '编辑'); 
-
-
-});
-</script>
+    // 上传存根预览
+  $("#fileUpload").on('change', function () {
+    var thisbtn= $("#fileUpload");
+    var text = $(this).parents(".inputbox").children('span').text();
+     UpLoadImg(thisbtn,'#image-holder'); 
+     $(this).parents(".inputbox").children('span').text(text === '选择文件' ? '编辑' : '编辑'); 
+  
+  
+  });
+  </script>
