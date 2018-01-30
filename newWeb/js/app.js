@@ -38,6 +38,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             // expect($stateParams).toBe({type: "yingshou"});
         }
     });
+
   $stateProvider.state('duizhang', {
       url: "/duizhang/:id",
       templateUrl: 'templates/duizhang.html',
@@ -45,6 +46,23 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
           // If we got here from a url of /contacts/42
           //expect($stateParams).toBe({id: "123456789"});
       }
+  });
+
+  $stateProvider.state('yinhua', {
+    url: "/yinhua",
+    templateUrl: 'templates/djlist-paichan.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  })
+  $stateProvider.state('addyinhua', {
+    url: "/addyinhua",
+    templateUrl: 'templates/addyinhua.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
   });
 
   $stateProvider.state('addnewchuku', {
