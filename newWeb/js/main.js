@@ -36,6 +36,7 @@ $("#patternUpload").on('change', function () {
     UpLoadImg(thisbtn,'#pattern-holder'); 
 });
 
+
 // 我的花型页面花型上传预览
 $("#patUpload").on('change', function () { 
     var thisbtn= $("#patUpload");

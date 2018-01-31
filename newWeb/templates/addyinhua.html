@@ -22,7 +22,7 @@
               <span class="sblack">稿</span>
               <span class="sblack">底</span>
               <span class="sblack">距</span>
-              <a class="sgray">1</a>
+              <a class="sgray" onclick="addMark(this)">1</a>
               <a class="sgray">2</a>
               <a class="sgray">3</a>
               <a class="sgray">4</a>
@@ -36,7 +36,7 @@
               <!-- 花型说明图 -->
               <div class="patternbox" >
                   <div class="inputbox"><span>点击上传花型预览图</span><input id="patternUpload" type="file" /></div>
-                  <div id="pattern-holder"></div>
+                  <div id="image-map"></div>
                   
               </div>
               <!-- 花型说明图 结束-->
@@ -181,8 +181,7 @@
     
 </div>
 <!-- 打印表格主体 结束-->
-          
-      
+               
 <script type="text/javascript" src="js/jquery.scrollbar.js"></script> <!-- 自定义滚动条 -->
 <script type="text/javascript">
   $(function(){
@@ -195,9 +194,143 @@
         jQuery('.scrollbar-rail').scrollbar();
   });
     // 印花生产单页面花型上传,预览
-  $("#patternUpload").on('change', function () { 
-    var thisbtn= $("#patternUpload");
-    UpLoadImg(thisbtn,'#pattern-holder'); 
-  });
-  
+
+$("#patternUpload").on('change', function () { 
+  var thisbtn= $("#patternUpload");
+  Effects(thisbtn,'#image-map'); 
+});
+
+var numberMarkers = new Array();
+
+var Effects = function(c1,c2){
+  if (typeof (FileReader) != "undefined") {
+      var image_holder = $(c2);
+      image_holder.empty();
+      var reader = new FileReader();
+      reader.onload = function (e) {
+
+          var w = 2000,
+              h = 1500,
+              url = e.target.result,
+              map = new L.Map('image-map', {center: [0,0], minZoom:1, maxZoom:4, zoom: 1});
+
+          var southWest = map.unproject([0,h],map.getMaxZoom()-1);
+          var northEast = map.unproject([w,0],map.getMaxZoom()-1);
+          var bounds = new L.LatLngBounds(southWest,northEast);
+          L.imageOverlay(url,bounds).addTo(map);
+          map.setMaxBounds(bounds);
+
+          var markers = new Array();
+          var marker;
+          var polyline = L.polyline([], {
+            color: 'black',
+            weight: 2,
+            opacity: .7,
+            dashArray: '10,3',
+            lineJoin: 'round',
+            clickable: 'true'}).addTo(map);
+
+          var myIcon = L.icon({
+              iconUrl: '../newWeb/images/tabsbg.png',
+              iconSize: [26, 26]
+          });
+
+          var makeMarkerAndPolyline = function(latLng) {
+            marker = new L.Marker(latLng, {icon: myIcon, draggable:true});
+            map.addLayer(marker);
+            markers.push(marker);
+            polyline.addLatLng(marker.getLatLng());
+            // Length - 1 is current index since arrays start with 0
+            marker._polylineIndex = polyline.getLatLngs().length -1;
+            polyline.redraw();
+
+            // Marker events
+            marker.on('dragend', function(e) {
+              alert(this._polylineIndex);
+              //polyline.setLatLngs(this._polylineIndex,e.getLatLng());
+
+       
+
+
+
+
+              // Redraw polyline!
+              polyline.redraw();
+            });
+            
+            return marker;
+          }
+          // Events
+          polyline.on('click', function(e) {
+          
+              var marker = makeMarkerAndPolyline(e.latlng);
+            
+          });
+          map.on('click', function(e) {
+            
+              var marker =	makeMarkerAndPolyline(e.latlng);
+            
+          });
+
+          
+
+
+          
+          //---编辑---
+          /*
+          var drawnItems = new L.FeatureGroup();
+          map.addLayer(drawnItems);
+
+          var drawControl = new L.Control.Draw({
+              position: 'topright',
+              draw: {
+                  polyline: false,
+                  polygon: false,
+                  circle: false,
+                  marker: true
+              },
+              edit: {
+                  featureGroup: drawnItems,
+                  remove: true
+              }
+          });
+          map.addControl(drawControl);
+
+          map.on(L.Draw.Event.CREATED, function (e) {
+              var type = e.layerType,
+                      layer = e.layer;
+
+              if (type === 'marker') {
+                  layer.bindPopup('A popup!');
+              }
+
+              drawnItems.addLayer(layer);
+          });
+
+          map.on(L.Draw.Event.EDITED, function (e) {
+              var layers = e.layers;
+              var countOfEditedLayers = 0;
+              layers.eachLayer(function (layer) {
+                  countOfEditedLayers++;
+              });
+              console.log("Edited " + countOfEditedLayers + " layers");
+          });
+
+          */
+          
+      }
+
+      image_holder.show();
+      reader.readAsDataURL(c1[0].files[0]);
+  } else {
+      alert("你的浏览器不支持FileReader.请使用IE10以上版本.");
+  }
+
+};
+
+
+function addMarker(obj){
+   var marker = new L.Marker(latLng, {draggable:true});
+}
+
 </script>
