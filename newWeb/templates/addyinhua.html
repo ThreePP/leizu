@@ -245,18 +245,9 @@ var Effects = function(c1,c2){
             polyline.redraw();
 
             // Marker events
-            marker.on('dragend', function(e) {
-              alert(this._polylineIndex);
-              //polyline.setLatLngs(this._polylineIndex,e.getLatLng());
-
-       
-
-
-
-
-              // Redraw polyline!
-              polyline.redraw();
-            });
+            marker.on('dragstart', dragStartHandler)
+            marker.on('drag', dragHandler)
+            marker.on('dragend', dragEndHandler);
             
             return marker;
           }
@@ -271,7 +262,48 @@ var Effects = function(c1,c2){
               var marker =	makeMarkerAndPolyline(e.latlng);
             
           });
+        
+          function dragStartHandler (e) {
 
+            // Get the polyline's latlngs
+            var latlngs = polyline.getLatLngs(),
+        
+                // Get the marker's start latlng
+                latlng = this.getLatLng();
+        
+            // Iterate the polyline's latlngs
+            for (var i = 0; i < latlngs.length; i++) {
+        
+                // Compare each to the marker's latlng
+                if (latlng.equals(latlngs[i])) {
+        
+                    // If equals store key in marker instance
+                    this.polylineLatlng = i;
+                }
+            }
+          }
+
+          function dragHandler (e) {
+
+            // Get the polyline's latlngs
+            var latlngs = polyline.getLatLngs(),
+        
+                // Get the marker's current latlng
+                latlng = this.getLatLng();
+        
+            // Replace the old latlng with the new
+            latlngs.splice(this.polylineLatlng, 1, latlng);
+        
+            // Update the polyline with the new latlngs
+            polyline.setLatLngs(latlngs);
+          }
+
+          function dragEndHandler (e) {
+
+            // Delete key from marker instance
+            delete this.polylineLatlng;
+          }
+        
           
 
 
