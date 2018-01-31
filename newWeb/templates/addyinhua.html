@@ -235,6 +235,8 @@ var Effects = function(c1,c2){
               iconSize: [26, 26]
           });
 
+          var divIcon = L.divIcon({className: 'my-div-icon'});
+
           var makeMarkerAndPolyline = function(latLng) {
             marker = new L.Marker(latLng, {icon: myIcon, draggable:true});
             map.addLayer(marker);
@@ -258,9 +260,16 @@ var Effects = function(c1,c2){
             
           });
           map.on('click', function(e) {
-            
+            if(markers.length<2){
               var marker =	makeMarkerAndPolyline(e.latlng);
-            
+              if(markers.length==2){
+                var popupContent = '<input type="date" id="abNumber"/>';
+                marker.bindPopup(popupContent)
+                .openPopup();
+                //addRectangle(e.latlng);
+
+              }
+            }
           });
         
           function dragStartHandler (e) {
@@ -303,7 +312,18 @@ var Effects = function(c1,c2){
             // Delete key from marker instance
             delete this.polylineLatlng;
           }
-        
+          
+          function addRectangle(latLng){
+            var currentPoint = map.latLngToContainerPoint(latLng);
+            var width = 80;
+            var height = 30;
+            var xDifference = width / 2;
+            var yDifference = height / 2;
+            var southWest = L.point((currentPoint.x - xDifference), (currentPoint.y - yDifference));
+            var northEast = L.point((currentPoint.x + xDifference), (currentPoint.y + yDifference));
+            var bounds = L.latLngBounds(map.containerPointToLatLng(southWest),map.containerPointToLatLng(northEast));
+            L.rectangle(bounds).addTo(map);
+          }
           
 
 
