@@ -35,22 +35,9 @@
             <td colspan="3" rowspan="7">
               <!-- 花型说明图 -->
               <div class="patternbox" >
-                  <!-- 放大缩小按钮 -->
-                  <div class="arbtns"><a class="addbtn" href=""></a><a class="rebtn" href=""></a></div>
                   <div class="inputbox"><span>点击上传花型预览图</span><input id="patternUpload" type="file" /></div>
                   <div id="pattern-holder"></div>
-                  <!-- 标记组 -->
-                  <div class="tabs">
-                    <!-- 修改onetab中style里的left和top值,改变按钮的位置 -->
-                    <!-- <div class="onetab" style="left:10px;top:40px;"><a href="javascript:void(0)">6</a></div> -->
-                    <div class="onetab" style="left:100px;top:5px;"><a href="javascript:void(0)">A</a></div>
-                    <div class="onetab" style="left:200px;top:5px;"><a href="javascript:void(0)">B</a><input type="text" class="form-control" placeholder="10.5 cm"></div>
-                    <!-- 修改tabsline中style里的left和top值,改变线的位置,修改transform的值旋转线角度,修改width改变长度   -->
-                    <div class="tabsline" style="left:128px;top:10px;width:70px;transform: rotate(0deg);">
-                      <span class="pull-left"></span><span class="pull-right"></span>
-                    </div> 
-                  </div>
-                  <!-- 标记组 结束-->
+                  
               </div>
               <!-- 花型说明图 结束-->
             </td>
@@ -206,5 +193,10 @@
     });
       // 激活自定义滚动条
         jQuery('.scrollbar-rail').scrollbar();
-  })
-</script> 
+  });
+    // 印花生产单页面花型上传,预览
+  $("#patternUpload").on('change', function () { 
+    var thisbtn= $("#patternUpload");
+    UpLoadImg(thisbtn,'#pattern-holder'); 
+  });
+</script>
