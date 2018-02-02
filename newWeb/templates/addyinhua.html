@@ -22,15 +22,15 @@
               <span class="sblack">稿</span>
               <span class="sblack">底</span>
               <span class="sblack">距</span>
-              <a class="sgray" onclick="addMark(this)">1</a>
-              <a class="sgray">2</a>
-              <a class="sgray">3</a>
-              <a class="sgray">4</a>
-              <a class="sgray">5</a>
-              <a class="sgray">6</a>
-              <a class="sgray">7</a>
-              <a class="sgray">8</a>
-              <a class="sgray">9</a>
+              <a class="sgray" onclick="addMarker(this)">1</a>
+              <a class="sgray" onclick="addMarker(this)">2</a>
+              <a class="sgray" onclick="addMarker(this)">3</a>
+              <a class="sgray" onclick="addMarker(this)">4</a>
+              <a class="sgray" onclick="addMarker(this)">5</a>
+              <a class="sgray" onclick="addMarker(this)">6</a>
+              <a class="sgray" onclick="addMarker(this)">7</a>
+              <a class="sgray" onclick="addMarker(this)">8</a>
+              <a class="sgray" onclick="addMarker(this)">9</a>
             </td>
             <td colspan="3" rowspan="7">
               <!-- 花型说明图 -->
@@ -128,9 +128,7 @@
               <div class="tbline">
                 <span class="sblack">距</span> <span class="sright"><input type="text" class="form-control" placeholder=""></span> 
               </div> 
-              <!--  <div class="tbline">
-                  <span class="sblack">1</span><span><input type="text" class="form-control" placeholder=""></span> 
-              </div>  -->
+              
             </td>
           </tr>
           <tr>
@@ -202,6 +200,7 @@ $("#patternUpload").on('change', function () {
 
 var numberMarkers = new Array();
 var inputCopy;
+var map;
 
 var Effects = function(c1,c2){
   if (typeof (FileReader) != "undefined") {
@@ -212,8 +211,8 @@ var Effects = function(c1,c2){
 
           var w = 2000,
               h = 1500,
-              url = e.target.result,
-              map = new L.Map('image-map', {center: [0,0], minZoom:1, maxZoom:4, zoom: 1});
+              url = e.target.result;
+              map = new L.map('image-map', {center: [0,0], minZoom:1, maxZoom:4, zoom: 1});
 
           var southWest = map.unproject([0,h],map.getMaxZoom()-1);
           var northEast = map.unproject([w,0],map.getMaxZoom()-1);
@@ -251,7 +250,7 @@ var Effects = function(c1,c2){
             marker.on('dragstart', dragStartHandler);
             marker.on('drag', dragHandler);
             marker.on('dragend', dragEndHandler);
-            //popup.on('keydown', storeData);
+            //popup.on('click', storeData);
             
             return marker;
           }
@@ -265,23 +264,20 @@ var Effects = function(c1,c2){
             if(markers.length<2){
               var marker =	makeMarkerAndPolyline(e.latlng);
               if(markers.length==2){
-                var popupContent = '距离<input type="date" id="abNumber"/>';
-                marker.bindPopup(popupContent)
+                var content = L.DomUtil.create('input', 'content');
+                var popup = L.popup().setContent(content);
+                marker.bindPopup(popup)
                 .openPopup();
                 //addRectangle(e.latlng);
-                var input = L.DomUitl.get('abNubmer');
-                if(inputCopy){
-                  input.value = inputCopy;
-                }
-                // When text is entered before dragend.
-                input.addEventListener('keydown', function(e) {
-                  inputCopy = input.value;
-                });
 
+                L.DomEvent.addListener(content, 'click', function(event){
+                  // do stuff
+                }, context);
               }
             }
           });
-        
+
+          
           function dragStartHandler (e) {
 
             // Get the polyline's latlngs
@@ -323,6 +319,7 @@ var Effects = function(c1,c2){
             delete this.polylineLatlng;
           }
           //add rectangle
+          /*
           function addRectangle(latLng){
             var currentPoint = map.latLngToContainerPoint(latLng);
             var width = 80;
@@ -334,57 +331,6 @@ var Effects = function(c1,c2){
             var bounds = L.latLngBounds(map.containerPointToLatLng(southWest),map.containerPointToLatLng(northEast));
             L.rectangle(bounds).addTo(map);
           }
-          //store the data of marker
-          function storeData(){
-            var input = L.DomUitl.get('abNubmer');
-            // When text is entered before dragend.
-            input.addEventListener('keydown', function(e) {
-              input.value = inputCopy;
-            });
-          }
-
-
-          
-          //---编辑---
-          /*
-          var drawnItems = new L.FeatureGroup();
-          map.addLayer(drawnItems);
-
-          var drawControl = new L.Control.Draw({
-              position: 'topright',
-              draw: {
-                  polyline: false,
-                  polygon: false,
-                  circle: false,
-                  marker: true
-              },
-              edit: {
-                  featureGroup: drawnItems,
-                  remove: true
-              }
-          });
-          map.addControl(drawControl);
-
-          map.on(L.Draw.Event.CREATED, function (e) {
-              var type = e.layerType,
-                      layer = e.layer;
-
-              if (type === 'marker') {
-                  layer.bindPopup('A popup!');
-              }
-
-              drawnItems.addLayer(layer);
-          });
-
-          map.on(L.Draw.Event.EDITED, function (e) {
-              var layers = e.layers;
-              var countOfEditedLayers = 0;
-              layers.eachLayer(function (layer) {
-                  countOfEditedLayers++;
-              });
-              console.log("Edited " + countOfEditedLayers + " layers");
-          });
-
           */
           
       }
@@ -399,7 +345,36 @@ var Effects = function(c1,c2){
 
 
 function addMarker(obj){
-   var marker = new L.Marker(latLng, {draggable:true});
+  var checkMarker = true;
+  for(i=0;i<numberMarkers.length;i++){
+    if(numberMarkers[i].index==obj.innerText){
+      //checkMarker = false;
+      var number = "#number"+obj.innerText;
+      $(number).remove();
+      numberMarkers.splice(indexOf(numberMarkers[i],1));
+    }
+  }
+  //if(checkMarker){
+    if(map){
+    var myIcon = L.icon({
+        iconUrl: '../newWeb/images/tabsbg.png',
+        iconSize: [26, 26]
+    });
+    var marker = new L.Marker(map.getCenter(), {icon:myIcon,title:obj.innerText,draggable:true});
+    map.addLayer(marker);
+    var markerObj = {index:obj.innerText,marker:marker};
+    numberMarkers.push(markerObj);
+    }else{
+      alert('请先选择图片');
+    }
+
+    //add descriptions 
+    $("#Yhbox").append('<div class="tbline" id="number'+obj.innerText+'">'+
+        '<span class="sblack">'+obj.innerText+'</span><span><input type="text" class="form-control" placeholder=""></span>'+ 
+    '</div>');
+    
+
+  //}
 }
 
 </script>
