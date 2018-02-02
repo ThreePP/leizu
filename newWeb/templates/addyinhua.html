@@ -201,6 +201,7 @@ $("#patternUpload").on('change', function () {
 });
 
 var numberMarkers = new Array();
+var inputCopy;
 
 var Effects = function(c1,c2){
   if (typeof (FileReader) != "undefined") {
@@ -247,9 +248,10 @@ var Effects = function(c1,c2){
             polyline.redraw();
 
             // Marker events
-            marker.on('dragstart', dragStartHandler)
-            marker.on('drag', dragHandler)
+            marker.on('dragstart', dragStartHandler);
+            marker.on('drag', dragHandler);
             marker.on('dragend', dragEndHandler);
+            //popup.on('keydown', storeData);
             
             return marker;
           }
@@ -263,10 +265,18 @@ var Effects = function(c1,c2){
             if(markers.length<2){
               var marker =	makeMarkerAndPolyline(e.latlng);
               if(markers.length==2){
-                var popupContent = '<input type="date" id="abNumber"/>';
+                var popupContent = '距离<input type="date" id="abNumber"/>';
                 marker.bindPopup(popupContent)
                 .openPopup();
                 //addRectangle(e.latlng);
+                var input = L.DomUitl.get('abNubmer');
+                if(inputCopy){
+                  input.value = inputCopy;
+                }
+                // When text is entered before dragend.
+                input.addEventListener('keydown', function(e) {
+                  inputCopy = input.value;
+                });
 
               }
             }
@@ -312,7 +322,7 @@ var Effects = function(c1,c2){
             // Delete key from marker instance
             delete this.polylineLatlng;
           }
-          
+          //add rectangle
           function addRectangle(latLng){
             var currentPoint = map.latLngToContainerPoint(latLng);
             var width = 80;
@@ -324,7 +334,14 @@ var Effects = function(c1,c2){
             var bounds = L.latLngBounds(map.containerPointToLatLng(southWest),map.containerPointToLatLng(northEast));
             L.rectangle(bounds).addTo(map);
           }
-          
+          //store the data of marker
+          function storeData(){
+            var input = L.DomUitl.get('abNubmer');
+            // When text is entered before dragend.
+            input.addEventListener('keydown', function(e) {
+              input.value = inputCopy;
+            });
+          }
 
 
           
