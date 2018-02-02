@@ -64,6 +64,14 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         //expect($stateParams).toBe({id: "123456789"});
     }
   });
+  $stateProvider.state('ylyinhua', {
+    url: "/ylyinhua/:yinhua",
+    templateUrl: 'templates/ylyinhua.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  });
 
   $stateProvider.state('addnewchuku', {
     url: '/addnewchuku',

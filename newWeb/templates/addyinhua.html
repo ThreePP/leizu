@@ -199,7 +199,7 @@ $("#patternUpload").on('change', function () {
 });
 
 var numberMarkers = new Array();
-var inputCopy;
+var markerGroup = L.layerGroup();
 var map;
 
 var Effects = function(c1,c2){
@@ -218,8 +218,9 @@ var Effects = function(c1,c2){
           var northEast = map.unproject([w,0],map.getMaxZoom()-1);
           var bounds = new L.LatLngBounds(southWest,northEast);
           L.imageOverlay(url,bounds).addTo(map);
+          //markerGroup.addTo(map);
           map.setMaxBounds(bounds);
-
+          
           var markers = new Array();
           var marker;
           var polyline = L.polyline([], {
@@ -230,14 +231,7 @@ var Effects = function(c1,c2){
             lineJoin: 'round',
             clickable: 'true'}).addTo(map);
 
-          var myIcon = L.icon({
-              iconUrl: '../newWeb/images/tabsbg.png',
-              iconSize: [26, 26]
-          });
-
-          var divIcon = L.divIcon({className: 'my-div-icon'});
-
-          var makeMarkerAndPolyline = function(latLng) {
+          function makeMarkerAndPolyline(latLng,myIcon) {
             marker = new L.Marker(latLng, {icon: myIcon, draggable:true});
             map.addLayer(marker);
             markers.push(marker);
@@ -262,17 +256,22 @@ var Effects = function(c1,c2){
           });
           map.on('click', function(e) {
             if(markers.length<2){
-              var marker =	makeMarkerAndPolyline(e.latlng);
-              if(markers.length==2){
-                var content = L.DomUtil.create('input', 'content');
-                var popup = L.popup().setContent(content);
-                marker.bindPopup(popup)
-                .openPopup();
-                //addRectangle(e.latlng);
+              if(markers.length==1){
+                var divIcon = L.divIcon({
+                  className: 'tabs',
+                  html:'<div id="bBox" class="onetab" style="display: inline-block">'+
+                    '<a id="b">B</a>'+
+                    '<input type="text" class="form-control" style="float:left" placeholder="10.5 cm" onchange=numberValue(this)></div>'
+                });
+                var marker =	makeMarkerAndPolyline(e.latlng,divIcon);
 
-                L.DomEvent.addListener(content, 'click', function(event){
-                  // do stuff
-                }, context);
+              }else{
+                var divIcon = L.divIcon({
+                  className: 'tabs',
+                  html:'<div id="aBox" class="onetab">'+
+                    '<a id="a">A</a></div>'
+                });
+                var marker =	makeMarkerAndPolyline(e.latlng,divIcon);
               }
             }
           });
@@ -318,20 +317,6 @@ var Effects = function(c1,c2){
             // Delete key from marker instance
             delete this.polylineLatlng;
           }
-          //add rectangle
-          /*
-          function addRectangle(latLng){
-            var currentPoint = map.latLngToContainerPoint(latLng);
-            var width = 80;
-            var height = 30;
-            var xDifference = width / 2;
-            var yDifference = height / 2;
-            var southWest = L.point((currentPoint.x - xDifference), (currentPoint.y - yDifference));
-            var northEast = L.point((currentPoint.x + xDifference), (currentPoint.y + yDifference));
-            var bounds = L.latLngBounds(map.containerPointToLatLng(southWest),map.containerPointToLatLng(northEast));
-            L.rectangle(bounds).addTo(map);
-          }
-          */
           
       }
 
@@ -345,25 +330,40 @@ var Effects = function(c1,c2){
 
 
 function addMarker(obj){
+  
   var checkMarker = true;
   for(i=0;i<numberMarkers.length;i++){
     if(numberMarkers[i].index==obj.innerText){
-      //checkMarker = false;
+      checkMarker = false;
+      alert(numberMarkers[i].index);
       var number = "#number"+obj.innerText;
       $(number).remove();
-      numberMarkers.splice(indexOf(numberMarkers[i],1));
+      obj.className = 'sgray';
+      //numberMarkers.splice(indexOf(obj.innerText),1);
+      
+      map.removeLayer(numberMarkers[i].marker);
+      
+      numberMarkers = $.grep(numberMarkers, function(e){ 
+        return e.index != obj.innerText; 
+      });
+      
+      
     }
   }
-  //if(checkMarker){
+  if(checkMarker){
+    obj.className = 'sblack';
     if(map){
-    var myIcon = L.icon({
-        iconUrl: '../newWeb/images/tabsbg.png',
-        iconSize: [26, 26]
-    });
-    var marker = new L.Marker(map.getCenter(), {icon:myIcon,title:obj.innerText,draggable:true});
-    map.addLayer(marker);
-    var markerObj = {index:obj.innerText,marker:marker};
-    numberMarkers.push(markerObj);
+      var divIcon = L.divIcon({
+        className:'my-div-icon',
+        html:'<div class="sblack">'+obj.innerText+'</div>'
+        });
+ 
+      var marker = new L.Marker(map.getCenter(), {icon:divIcon,title:obj.innerText,draggable:true});
+      //marker.addTo(markerGroup);
+      map.addLayer(marker);
+      var markerObj = {index:obj.innerText, marker:marker};
+      numberMarkers.push(markerObj);
+
     }else{
       alert('请先选择图片');
     }
@@ -374,7 +374,14 @@ function addMarker(obj){
     '</div>');
     
 
-  //}
+  }
 }
+
+function numberValue(obj){
+  //alert(obj.value);
+  var value = obj.value.split('cm');
+  obj.value = Number(value[0]).toFixed(1)+' cm';
+}
+
 
 </script>

@@ -29,11 +29,17 @@
                         border: 1px solid #ccc;
                         margin-bottom: 10px;
                 }
+
+                .my-div-icon{
+                        border: #ccc;
+                        width: 50;
+                }
+                
         </style>       
         <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script src="js/angular.min.js"></script>
-        <script src="js/angular-animate.js"></script>
+        <script src="js/angular-animate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controller/chuku.client.controller.js"></script>
@@ -41,7 +47,8 @@
         <script src="js/controller/chukuMingxi.client.controller.js"></script>
         <script src="js/controller/djconChuku.client.controller.js"></script>
         <script type="text/javascript" src="js/leaflet.js" ></script>
-        <script type="text/javascript" src="js/Leaflet.draw.js" ></script>        
+        <script type="text/javascript" src="js/Leaflet.draw.js" ></script>
+        <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-image/v0.0.4/leaflet-image.js'></script>        
         <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
         <script type="text/javascript" src="js/numeral.min.js"></script><!-- 格式化数字 -->
         <script type="text/javascript" src="js/saomiaocungen.js" ></script> <!-- 扫描存根js -->
@@ -51,44 +58,6 @@
         <!-- Leaflet stylesheets -->
         <link rel="stylesheet" href="css/leaflet.css" />
         <link rel="stylesheet" href="css/leaflet.draw.css" />
-
-        <!--script src="libs/leaflet-src.js"></script-->
-        
-        <script src="js/leafletdraw/Leaflet.draw.js"></script>
-        <script src="js/leafletdraw/Leaflet.Draw.Event.js"></script>
-
-        <script src="js/leafletdraw/edit/handler/Edit.Poly.js"></script>
-        <script src="js/leafletdraw/edit/handler/Edit.SimpleShape.js"></script>
-        <script src="js/leafletdraw/edit/handler/Edit.Rectangle.js"></script>
-        <script src="js/leafletdraw/edit/handler/Edit.Marker.js"></script>
-        <script src="js/leafletdraw/edit/handler/Edit.CircleMarker.js"></script>
-        <script src="js/leafletdraw/edit/handler/Edit.Circle.js"></script>
-
-        <script src="js/leafletdraw/draw/handler/Draw.Feature.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.Polyline.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.Polygon.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.SimpleShape.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.Rectangle.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.Circle.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.Marker.js"></script>
-        <script src="js/leafletdraw/draw/handler/Draw.CircleMarker.js"></script>
-
-        <script src="js/leafletdraw/ext/TouchEvents.js"></script>
-        <script src="js/leafletdraw/ext/LatLngUtil.js"></script>
-        <script src="js/leafletdraw/ext/GeometryUtil.js"></script>
-        <script src="js/leafletdraw/ext/LineUtil.Intersect.js"></script>
-        <script src="js/leafletdraw/ext/Polyline.Intersect.js"></script>
-        <script src="js/leafletdraw/ext/Polygon.Intersect.js"></script>
-
-        <script src="js/leafletdraw/Control.Draw.js"></script>
-        <script src="js/leafletdraw/Tooltip.js"></script>
-        <script src="js/leafletdraw/Toolbar.js"></script>
-
-        <script src="js/leafletdraw/draw/DrawToolbar.js"></script>
-        <script src="js/leafletdraw/edit/EditToolbar.js"></script>
-        <script src="js/leafletdraw/edit/handler/EditToolbar.Edit.js"></script>
-        <script src="js/leafletdraw/edit/handler/EditToolbar.Delete.js"></script>
-
 
  </head>
 <body class="kucun" ng-app="myApp">
