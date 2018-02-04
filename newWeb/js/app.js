@@ -99,6 +99,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/djlist-fapiao.html'
   });
 
+  $stateProvider.state('djcon-fapiao', {
+    url: '/djcon-fapiao',
+    templateUrl: 'templates/djcon-fapiao.html'
+  });
+
   $stateProvider.state('djlist-lingsun', {
     url: '/djlist-lingsun',
     templateUrl: 'templates/djlist-lingsun.html'

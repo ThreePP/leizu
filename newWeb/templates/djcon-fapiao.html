@@ -1,0 +1,201 @@
+<div class="pagetop pagetop2">               
+<div class="pbtn contractbtn">
+  <a class="btn btn-default" href="djcon-fapiao-txt.html">查看预览</a>
+</div>
+</div>
+<!-- 打印表格主体 -->
+<div id="printbox" class="tableprint">
+<h2 class="hetongtitle"><div class="pull-left">
+<p>深圳市嫘祖丝绸有限公司</p>
+<p class="fapiaotitlen">发票签收回执单 </p>
+</div>
+<span class="pull-right htriqi">打印日期：<input type="text" class="form-control datepicker today noline" data-provide="datepicker" placeholder="请选择日期"></span></h2>            
+
+<div class="fapiaoline">
+  <div class="table"><span>TO：</span>
+    <!-- 下拉菜单 -->
+          <div class="dropdown ">
+              <input type="text" class="form-control text-left" placeholder="请填写" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              <div class="dropdown-menu hetongdiv" aria-labelledby="Khchose">
+                <div class="scrollbar-rail">
+                <ul>                           
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>
+                  <li><a href="">深圳市娅奴实业有限公司</a></li>                                           
+                </ul>
+              </div>
+              </div>
+            </div>
+            <!-- 下拉菜单 --></div>
+  <p><span>FROM：</span> 深圳市嫘祖丝绸有限公司</p>
+</div>
+<div class="partytwo fapiaoline">
+  <p>我司已收到贵司“深圳增值税专用发票”共计<input type="text" class="form-control " style="width:50px;"  placeholder="">份（每份两联：第二联抵扣联、第三联发票联），</p>
+  <p>票面金额合计：<input type="text" class="form-control " onchange="getMoney(this)" style="width:100px;" placeholder="">元（大写：<input id="big" type="text" class="form-control " style="width:150px;" placeholder="">人民币）</p>                  
+</div>
+
+<div class="contarttitle"><span>发票号明细 </span>  </div>
+
+    <table class="table table-bordered table-hover inputtable">                   
+    <tbody>
+        <tr>                       
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+        <td align="center">6</td>
+        <td align="center">7</td>
+        <td align="center">8</td>
+        <td align="center">9</td>
+        <td align="center">10</td>
+      </tr>
+        <tr>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+      </tr> 
+      <tr>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+      </tr>                                           
+    </tbody>               
+  </table>                 
+
+  
+  <div class="fapiaoline">
+  <p>请您对以上发票核对无误后，在单位处签字盖章确认，并于两个工作日内将扫描件发回邮箱“912606060@qq.com”</p>
+  <p>（五个工作日内未收到回执邮件视为已收到发票），谢谢！</p>
+  <p>请在增值税专用发票开出之日起180天内到税务机关认证。  </p>             
+</div>
+
+<div class="fapiaoline text-right">
+  <p>核对签收：</p>
+  <p>单位盖章：</p>
+  <p>日期：</p>
+</div>
+
+
+</div>        
+<!-- 打印表格主体 结束-->           
+           
+        
+<script type="text/javascript" src="js/jquery.scrollbar.js"></script> <!-- 自定义滚动条 -->
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+     // 激活自定义滚动条
+         jQuery('.scrollbar-rail').scrollbar();
+    });
+
+    function getMoney(obj){
+      var currency = convertCurrency(obj.value);
+      var bigCurrency = document.getElementById('big');
+      //alert(currency);
+      bigCurrency.value = currency;
+
+    }
+
+    function convertCurrency(money) {
+      //汉字的数字
+      var cnNums = new Array('零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖');
+      //基本单位
+      var cnIntRadice = new Array('', '拾', '佰', '仟');
+      //对应整数部分扩展单位
+      var cnIntUnits = new Array('', '万', '亿', '兆');
+      //对应小数部分单位
+      var cnDecUnits = new Array('角', '分', '毫', '厘');
+      //整数金额时后面跟的字符
+      var cnInteger = '整';
+      //整型完以后的单位
+      var cnIntLast = '元';
+      //最大处理的数字
+      var maxNum = 999999999999999.9999;
+      //金额整数部分
+      var integerNum;
+      //金额小数部分
+      var decimalNum;
+      //输出的中文金额字符串
+      var chineseStr = '';
+      //分离金额后用的数组，预定义
+      var parts;
+      if (money == '') { return ''; }
+      money = parseFloat(money);
+      if (money >= maxNum) {
+        //超出最大处理数字
+        return '';
+      }
+      if (money == 0) {
+        chineseStr = cnNums[0] + cnIntLast + cnInteger;
+        return chineseStr;
+      }
+      //转换为字符串
+      money = money.toString();
+      if (money.indexOf('.') == -1) {
+        integerNum = money;
+        decimalNum = '';
+      } else {
+        parts = money.split('.');
+        integerNum = parts[0];
+        decimalNum = parts[1].substr(0, 4);
+      }
+      //获取整型部分转换
+      if (parseInt(integerNum, 10) > 0) {
+        var zeroCount = 0;
+        var IntLen = integerNum.length;
+        for (var i = 0; i < IntLen; i++) {
+          var n = integerNum.substr(i, 1);
+          var p = IntLen - i - 1;
+          var q = p / 4;
+          var m = p % 4;
+          if (n == '0') {
+            zeroCount++;
+          } else {
+            if (zeroCount > 0) {
+              chineseStr += cnNums[0];
+            }
+            //归零
+            zeroCount = 0;
+            chineseStr += cnNums[parseInt(n)] + cnIntRadice[m];
+          }
+          if (m == 0 && zeroCount < 4) {
+            chineseStr += cnIntUnits[q];
+          }
+        }
+        chineseStr += cnIntLast;
+      }
+      //小数部分
+      if (decimalNum != '') {
+        var decLen = decimalNum.length;
+        for (var i = 0; i < decLen; i++) {
+          var n = decimalNum.substr(i, 1);
+          if (n != '0') {
+            chineseStr += cnNums[Number(n)] + cnDecUnits[i];
+          }
+        }
+      }
+      if (chineseStr == '') {
+        chineseStr += cnNums[0] + cnIntLast + cnInteger;
+      } else if (decimalNum == '') {
+        chineseStr += cnInteger;
+      }
+      return chineseStr;
+    }
+  </script> 
