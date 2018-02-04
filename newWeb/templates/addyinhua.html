@@ -1,6 +1,6 @@
 <div class="pagetop">
     <h2>新建印花生产单</h2>
-    <div class="pbtn"><a href="ylyinhua.html" class="btn btn-default">查看预览</a></div>
+    <div class="pbtn"><a href="" class="btn btn-default">查看预览</a></div>
 </div>
 <!-- 打印表格主体 -->
 <div id="printbox" class="tableprint">
@@ -381,6 +381,19 @@ function numberValue(obj){
   //alert(obj.value);
   var value = obj.value.split('cm');
   obj.value = Number(value[0]).toFixed(1)+' cm';
+}
+
+function ylyinhua(){
+  leafletImage(map, function(err, canvas) {
+    // now you have canvas
+    // example thing to do with that canvas:
+    var img = document.createElement('img');
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    return img;
+  });
 }
 
 

@@ -1,17 +1,26 @@
-app.service('yinhuaService', function() {
-    var productList = [];
+myApp.service('yinhuaService', function() {
+    var yinhuaObject = {};
   
-    var addProduct = function(newObj) {
-        productList.push(newObj);
+    var addYinhua = function(newObj) {
+        yinhuaObject = newObj;
     };
   
-    var getProducts = function(){
-        return productList;
+    var getYinhua = function(){
+        return yinhuaObject;
     };
   
     return {
-      addProduct: addProduct,
-      getProducts: getProducts
+        addYinhua: addYinhua,
+        getYinhua: getYinhua
     };
   
+});
+
+myApp.directive('yinhuaDirective', function () {
+    return {
+        template: '',
+        controller: function ($scope) {
+            console.log($scope);
+        }
+    }
 });

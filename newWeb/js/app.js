@@ -9,6 +9,41 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.when('/huizong','/huizong/all');
   $urlRouterProvider.otherwise("/index");    
 
+  $stateProvider.state('myinfo', {
+    url: '/myinfo',
+    templateUrl: 'templates/myinfo.html'
+  });
+
+  $stateProvider.state('safety', {
+    url: '/safety',
+    templateUrl: 'templates/safety.html'
+  });
+
+  $stateProvider.state('realname', {
+    url: '/realname',
+    templateUrl: 'templates/realname.html'
+  });
+
+  $stateProvider.state('address', {
+    url: '/address',
+    templateUrl: 'templates/address.html'
+  });
+
+  $stateProvider.state('memberinfo', {
+    url: '/memberinfo',
+    templateUrl: 'templates/memberinfo.html'
+  });
+
+  $stateProvider.state('wallet', {
+    url: '/wallet',
+    templateUrl: 'templates/wallet.html'
+  });
+
+  $stateProvider.state('bill-list', {
+    url: '/bill-list',
+    templateUrl: 'templates/bill-list.html'
+  });
+
   $stateProvider.state('djlist-chuku', {
     url: '/djlist-chuku',
     templateUrl: 'templates/djlist-chuku.html'
@@ -59,13 +94,10 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('addyinhua', {
     url: "/addyinhua",
     templateUrl: 'templates/addyinhua.html',
-    controller: function ($stateParams) {
-        // If we got here from a url of /contacts/42
-        //expect($stateParams).toBe({id: "123456789"});
-    }
+    //controller: yinhuaController
   });
   $stateProvider.state('ylyinhua', {
-    url: "/ylyinhua/:yinhua",
+    url: "/ylyinhua",
     templateUrl: 'templates/ylyinhua.html',
     controller: function ($stateParams) {
         // If we got here from a url of /contacts/42
