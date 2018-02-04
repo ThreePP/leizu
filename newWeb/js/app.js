@@ -44,6 +44,46 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/bill-list.html'
   });
 
+  $stateProvider.state('bill-manage', {
+    url: '/bill-manage',
+    templateUrl: 'templates/bill-manage.html'
+  });
+
+  $stateProvider.state('orders-list', {
+    url: '/orders-list',
+    templateUrl: 'templates/orders-list.html'
+  });
+
+  $stateProvider.state('chouduan', {
+    url: '/chouduan',
+    templateUrl: 'templates/chouduan.html'
+  });
+
+  $stateProvider.state('goodslist', {
+    url: '/goodslist',
+    templateUrl: 'templates/goodslist.html'
+  });
+
+  $stateProvider.state('kucun', {
+    url: '/kucun',
+    templateUrl: 'templates/kucun.html'
+  });
+
+  $stateProvider.state('yangpin', {
+    url: '/yangpin',
+    templateUrl: 'templates/yangpin.html'
+  });
+
+  $stateProvider.state('pattern', {
+    url: '/pattern',
+    templateUrl: 'templates/pattern.html'
+  });
+
+  $stateProvider.state('color', {
+    url: '/color',
+    templateUrl: 'templates/color.html'
+  });
+
   $stateProvider.state('djlist-chuku', {
     url: '/djlist-chuku',
     templateUrl: 'templates/djlist-chuku.html'
@@ -90,7 +130,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         // If we got here from a url of /contacts/42
         //expect($stateParams).toBe({id: "123456789"});
     }
-  })
+  });
+
   $stateProvider.state('addyinhua', {
     url: "/addyinhua",
     templateUrl: 'templates/addyinhua.html',
@@ -104,6 +145,35 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         //expect($stateParams).toBe({id: "123456789"});
     }
   });
+
+  $stateProvider.state('ranse', {
+    url: "/ranse",
+    templateUrl: 'templates/djlist-paichan2.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  });
+
+  $stateProvider.state('addranse', {
+    url: "/addranse",
+    templateUrl: 'templates/addranse.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  });
+
+  $stateProvider.state('collection', {
+    url: "/collection",
+    templateUrl: 'templates/collection.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  });
+
+  
 
   $stateProvider.state('addnewchuku', {
     url: '/addnewchuku',

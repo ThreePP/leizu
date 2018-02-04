@@ -1,0 +1,244 @@
+<div class="pagetop">
+<ul class="pagetopmenu">
+  <!-- 当前栏目在li上添加active类 -->
+  <li class="active"><a href="color.html">我的颜色</a></li>
+  <li><a href="">查阅潘通色号</a></li>
+</ul>              
+<div class="pbtn">
+  <!-- 通用搜索 -->
+  <div class="searchbox grayform">
+      <input type="text" class="form-control" placeholder="输入颜色号进行搜索">
+      <button class="btn btn-default" >搜索</button>
+  </div>
+  <!-- 通用搜索 结束-->  
+</div>
+</div>
+<div class="pandf">
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="">全部颜色</a></li>
+  <li><a href="" >2019色系</a></li>
+  <li><a href="">2018色系</a></li>
+  <li><a href="">2017色系</a></li>
+  <a class="btn btn-default pull-right"  href="javascript:void(0)" data-toggle="modal" data-target="#groupings">管理分组</a>
+</ul>
+<!-- 点击上方链接,刷新tab-content>tab-list中的数据,同时给上方对应li添加 active类-->
+<div class="tab-content">
+  <div class="tabhead">
+    <!-- 当前选中项添加active类 -->
+    <div class="pull-left">
+      <a class="active" href="">按编号排序</a>
+      <a href="">按添加日期排序</a>
+    </div>
+    <div class="pull-right">
+      <a class="active" href="">显示色号</a>
+      <a href="">显示颜色名称</a>
+      <a class="btn btn-info" href="javascript:void(0)" data-toggle="modal" data-target="#addpf">新增颜色</a>
+      <a class="btn btn-info normalele" href="javascript:void(0)">批量管理</a>
+    </div>                    
+  </div>
+  <!-- 数据列表 -->
+  <div class="tab-list">
+    <!-- 一条数据 -->
+    <div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_1" value="option"><label class="el-checkbox-style " for="1_1"></p> <span>34225435</span></label>                    
+      </div>
+    </div>
+    <!-- 一条数据 结束-->
+    <!-- 填充页面的假数据 -->
+    <div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_2" value="option"><label class="el-checkbox-style " for="1_2"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_3" value="option"><label class="el-checkbox-style " for="1_3"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_4" value="option"><label class="el-checkbox-style " for="1_4"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_5" value="option"><label class="el-checkbox-style " for="1_5"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_6" value="option"><label class="el-checkbox-style " for="1_6"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_7" value="option"><label class="el-checkbox-style " for="1_7"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_8" value="option"><label class="el-checkbox-style " for="1_8"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_9" value="option"><label class="el-checkbox-style " for="1_9"></p> <span>34225435</span></label>                    
+      </div>
+    </div><div class="pflistbox">
+      <img src="sjimg/1.png" alt="">
+      <div class="pfinfo ">
+        <p class="el-checkbox editele"><input type="checkbox" name="checkbox1" id="1_10" value="option"><label class="el-checkbox-style " for="1_10"></p> <span>34225435</span></label>                    
+      </div>
+    </div>
+    <!-- 填充页面的假数据 结束-->
+    
+  </div>
+  <!-- 数据列表 结束-->
+    <!-- 批量管理 -->
+    <div class="deletepf editele">
+        <p class="pull-left el-radio"><input type="radio" id="pfseleteall"><label class="el-radio-style" for="pfseleteall">全选</label></p>
+        <p class="pull-right"><a class="btn btn-info" href="javascript:void(0)">删除</a></p>                       
+    </div>
+    <!-- 批量管理 结束-->
+</div> 
+</div>
+
+<!-- 通用分页 -->
+<nav class="page" aria-label="Page navigation">
+  <ul class="pagination">
+    <!-- 给不可点击的添加.disabled类 -->
+    <li class="disabled">
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true"><</span>
+      </a>
+    </li>
+    <!-- 给当前页添加.active类 -->
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- 通用分页 结束-->
+           
+
+<!-- 管理分组浮出层 -->
+<div class="modal fade bs-example-modal-sm" id="groupings" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">管理分组</h4>
+      </div>
+      <div class="modal-body">
+        <div class="groupline">
+          <input type="text" class="form-control" placeholder="2016色系"> 
+          <a href="" class="blue">删除</a>
+          <a href="" class="blue">上移</a>
+          <a href="" class="blue">下移</a>
+        </div>
+        <div class="groupline">
+          <input type="text" class="form-control" placeholder="2017色系"> 
+          <a href="" class="blue">删除</a>
+          <a href="" class="blue">上移</a>
+          <a href="" class="blue">下移</a>
+        </div>
+        <div class="groupline">
+          <input type="text" class="form-control" placeholder="2018色系"> 
+          <a href="" class="blue">删除</a>
+          <a href="" class="blue">上移</a>
+          <a href="" class="blue">下移</a>
+        </div>
+        <div class="groupline">
+          <input type="text" class="form-control" placeholder="2019色系"> 
+          <a href="" class="blue">删除</a>
+          <a href="" class="blue">上移</a>
+          <a href="" class="blue">下移</a>
+        </div>
+        <div class="groupline">
+          <input type="text" class="form-control" placeholder=""> 
+          <a href="" class="blue">新增</a>
+        </div>
+        <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+      </div>      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 管理分组浮出层 结束-->
+<!-- 新增颜色浮出层 -->
+<div class="modal fade bs-example-modal-sm" id="addpf" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">新增颜色</h4>
+      </div>
+      <div class="modal-body">
+        <div class="pull-left">
+            <div class="groupline ">
+              <span>新增日期</span><input type="text" class="form-control datepicker" data-provide="datepicker" placeholder=""> 
+            </div>
+            <div class="groupline">
+              <span>颜色编号</span><input type="text" class="form-control" placeholder=""> 
+            </div>
+            <div class="groupline">
+              <span>颜色名称</span><input type="text" class="form-control" placeholder=""> 
+            </div>
+            <div class="groupline">
+              <span>选择分组</span>
+              <div class="dropdown">
+                <a id="dLabel" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 2017色系</a>
+                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                  <!-- 当前选中项添加active类 -->
+                  <li><a href="">2017色系</a></li>
+                  <li class="active"><a href="">2018色系</a></li>
+                  <li><a href="">2019色系</a></li>
+                </ul>
+              </div>
+            </div> 
+             <div class="groupline">
+              <span>备注</span><input type="text" class="form-control" placeholder=""> 
+            </div>       
+            <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>
+        </div>
+        <div class="pull-right">  
+             <div id="pat-holder" > <span>未选择文件 </span></div> 
+             <div class="inputbox"><span>上传预览图</span><input id="patUpload" type="file" /></div>             
+        </div>
+        <div class="clear"></div>
+      </div>      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- 新增花型浮出层 结束-->
+
+
+
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+    })
+  </script>
+
+
+</body>
+</html>
