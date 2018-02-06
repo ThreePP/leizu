@@ -39,6 +39,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/wallet.html'
   });
 
+  $stateProvider.state('cashcoupon', {
+    url: '/cashcoupon',
+    templateUrl: 'templates/cashcoupon.html'
+  });
+
   $stateProvider.state('bill-list', {
     url: '/bill-list',
     templateUrl: 'templates/bill-list.html'
@@ -117,7 +122,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             // If we got here from a url of /contacts/42
             // expect($stateParams).toBe({type: "yingshou"});
         }
-    });
+  });
 
   $stateProvider.state('duizhang', {
       url: "/duizhang/:id",
