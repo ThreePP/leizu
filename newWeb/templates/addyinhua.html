@@ -38,6 +38,7 @@
                   <div class="inputbox"><span>点击上传花型预览图</span><input id="patternUpload" type="file" /></div>
                   <div id="image-map"></div>
                   
+                  
               </div>
               <!-- 花型说明图 结束-->
             </td>
@@ -201,6 +202,7 @@ $("#patternUpload").on('change', function () {
 var numberMarkers = new Array();
 var markerGroup = L.layerGroup();
 var map;
+var yinhuaImage;
 
 var Effects = function(c1,c2){
   if (typeof (FileReader) != "undefined") {
@@ -382,8 +384,8 @@ function numberValue(obj){
   var value = obj.value.split('cm');
   obj.value = Number(value[0]).toFixed(1)+' cm';
 }
-
-function ylyinhua(){
+/*
+function preview(){
   leafletImage(map, function(err, canvas) {
     // now you have canvas
     // example thing to do with that canvas:
@@ -392,9 +394,9 @@ function ylyinhua(){
     img.width = dimensions.x;
     img.height = dimensions.y;
     img.src = canvas.toDataURL();
-    return img;
+    document.getElementById('images').innerHTML = '';
+    document.getElementById('images').appendChild(img);
   });
 }
-
-
+*/
 </script>

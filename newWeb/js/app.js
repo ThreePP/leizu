@@ -109,6 +109,11 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/djcon-fapiao.html'
   });
 
+  $stateProvider.state('djcon-fapiao-txt', {
+    url: '/djcon-fapiao-txt',
+    templateUrl: 'templates/djcon-fapiao-txt.html'
+  });
+
   $stateProvider.state('djlist-lingsun', {
     url: '/djlist-lingsun',
     templateUrl: 'templates/djlist-lingsun.html'
@@ -145,15 +150,12 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('addyinhua', {
     url: "/addyinhua",
     templateUrl: 'templates/addyinhua.html',
-    //controller: yinhuaController
+    controller: 'yinhuaController'
   });
   $stateProvider.state('ylyinhua', {
     url: "/ylyinhua",
     templateUrl: 'templates/ylyinhua.html',
-    controller: function ($stateParams) {
-        // If we got here from a url of /contacts/42
-        //expect($stateParams).toBe({id: "123456789"});
-    }
+    controller: 'yinhuaPreviewController'
   });
 
   $stateProvider.state('ranse', {
@@ -168,6 +170,15 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('addranse', {
     url: "/addranse",
     templateUrl: 'templates/addranse.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  });
+
+  $stateProvider.state('ylranse', {
+    url: "/ylranse",
+    templateUrl: 'templates/ylranse.html',
     controller: function ($stateParams) {
         // If we got here from a url of /contacts/42
         //expect($stateParams).toBe({id: "123456789"});
@@ -195,6 +206,38 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
     url: '/addchukumingxi',
     templateUrl: 'templates/addchukumingxi.html',
     controller: 'chukuMingxiController'
+  });
+
+  $stateProvider.state('addnewtuihuo', {
+    url: '/addnewtuihuo',
+    templateUrl: 'templates/addnewtuihuo.html',
+    controller: 'chukuController'
+
+  });
+
+  $stateProvider.state('addnewkousun', {
+    url: '/addnewkousun',
+    templateUrl: 'templates/addnewkousun.html',
+    controller: 'chukuController'
+
+  });
+
+  $stateProvider.state('addnewruku', {
+    url: '/addnewruku',
+    templateUrl: 'templates/addnewruku.html'
+
+  });
+
+  $stateProvider.state('addnewlingliao', {
+    url: '/addnewlingliao',
+    templateUrl: 'templates/addnewlingliao.html'
+
+  });
+
+  $stateProvider.state('addnewtiaozheng', {
+    url: '/addnewtiaozheng',
+    templateUrl: 'templates/addnewtiaozheng.html'
+
   });
   
 
@@ -266,6 +309,22 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   .state('contract.detail', {
     url: '/detail/:id',
     templateUrl: 'templates/contract-txt.html',
+    // controller: function ($stateParams) {
+    //   // If we got here from a url of /contacts/42
+    //   //expect($stateParams).toBe({id: "123456789"});
+    // }
+  });
+  $stateProvider.state('contract-new', {
+    url: '/contract-new',
+    templateUrl: 'templates/contract-new.html',
+    // controller: function ($stateParams) {
+    //   // If we got here from a url of /contacts/42
+    //   //expect($stateParams).toBe({id: "123456789"});
+    // }
+  });
+  $stateProvider.state('contract-add', {
+    url: '/contract-add',
+    templateUrl: 'templates/contract-add.html',
     // controller: function ($stateParams) {
     //   // If we got here from a url of /contacts/42
     //   //expect($stateParams).toBe({id: "123456789"});

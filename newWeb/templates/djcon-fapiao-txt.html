@@ -1,0 +1,92 @@
+<div class="pagetop pagetop2">               
+<div class="pbtn contractbtn">
+  <button class="btn btn-default" onclick="jQuery.print('#printbox')">打印预览</button>
+</div>
+</div>
+<!-- 打印表格主体 -->
+<div id="printbox" class="tableprint">
+<h2 class="hetongtitle"><div class="pull-left">
+<p>深圳市嫘祖丝绸有限公司</p>
+<p class="fapiaotitlen">发票签收回执单 </p>
+</div>
+<span class="pull-right htriqi">打印日期：2018年1月10日</h2>            
+
+<div class="fapiaoline">
+  <div class="table"><span>TO：</span>
+    深圳市娅奴实业有限公司</div>
+  <p><span>FROM：</span> 深圳市嫘祖丝绸有限公司</p>
+</div>
+<div class="partytwo fapiaoline">
+  <p>我司已收到贵司“深圳增值税专用发票”共计<input type="text" class="form-control " style="width:50px;"  placeholder="">份（每份两联：第二联抵扣联、第三联发票联），</p>
+  <p>票面金额合计：<input type="text" class="form-control " style="width:100px;" placeholder="">元（大写：<input type="text" class="form-control " style="width:150px;" placeholder="">人民币）</p>                  
+</div>
+
+<div class="contarttitle"><span>发票号明细 </span>  </div>
+
+    <table class="table table-bordered table-hover inputtable">                   
+    <tbody>
+        <tr>                       
+        <td align="center">1</td>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+        <td align="center">6</td>
+        <td align="center">7</td>
+        <td align="center">8</td>
+        <td align="center">9</td>
+        <td align="center">10</td>
+      </tr>
+        <tr>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+      </tr> 
+      <tr>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
+      </tr>                                           
+    </tbody>               
+  </table>                 
+
+  
+  <div class="fapiaoline">
+  <p>请您对以上发票核对无误后，在单位处签字盖章确认，并于两个工作日内将扫描件发回邮箱“912606060@qq.com”</p>
+  <p>（五个工作日内未收到回执邮件视为已收到发票），谢谢！</p>
+  <p>请在增值税专用发票开出之日起180天内到税务机关认证。  </p>             
+</div>
+
+<div class="fapiaoline text-right">
+  <p>核对签收：</p>
+  <p>单位盖章：</p>
+  <p>日期：</p>
+</div>
+
+
+</div>        
+<!-- 打印表格主体 结束-->           
+           
+        
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+     // 激活自定义滚动条
+         jQuery('.scrollbar-rail').scrollbar();
+    })
+  </script> 
+
+</body>
+</html>

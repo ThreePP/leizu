@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>嫘祖|企业用户注册-提交资料</title>
+        <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script> 
+        <script type="text/javascript" src="js/jQuery.print.js"></script><!-- 打印功能js -->        
+        <script type="text/javascript" src="js/drag.js" ></script> <!-- 滑块验证js -->
+        <link rel="stylesheet" type="text/css"  href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.css"><!-- 日期插件 -->
+        <link rel="stylesheet" type="text/css"  href="css/main.css">
+        <link rel="stylesheet" type="text/css"  href="css/page.css">
+ </head>
+<body>
+<!-- 通用黑条导航栏 -->
+<div class="headerline" id="HeaderLine"></div>
+<!-- 通用黑条导航栏 结束-->
+<!-- 二级标题 -->
+<div class="secondtop">
+    <div class="secondcon">
+        <h1>企业用户注册</h1>
+    </div>
+</div>
+<!-- 二级标题 结束-->
+<!-- 页面主体 -->
+<div class="main">
+      <div class="companyregister">
+        <div class="crhead"> 
+          <!-- 变黑的内容添加active类  -->
+          <span class="no active">1</span>
+          <span class="title active">注册账号</span>
+          <span class="line active"></span>
+          <span class="no active">2</span>
+          <span class="title active">提交资料</span>
+          <span class="line"></span>
+          <span class="no">3</span>
+          <span class="title">审核资料</span>
+        </div>
+        <div class="crcon2">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">公司会员开通申请表</h3>
+              </div>
+              <div class="panel-body">
+                <p><a href="" class="blue">点击下载《公司会员账户开通申请表》</a>，下载后请签字盖章并扫描图片上传</p>
+                <span class="pull-left">上传图片</span>
+                <div class="inputbox"><span>选择文件</span><input id="companyreg1" type="file" /></div> 
+                <p class="gray">仅支持JPG、PNG、JPEG格式，文件小于4M</p>                                  
+                <div id="company-holder1"  > 没有预览可用 </div>
+              </div>
+            </div>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">营业执照复印件加盖公章</h3>
+              </div>
+              <div class="panel-body">
+                 <p>请上传营业执照复印件加盖公司原章的扫描图片</p>
+                 <span class="pull-left">上传图片</span>
+                <div class="inputbox"><span>选择文件</span><input id="companyreg2" type="file" /></div> 
+                <p class="gray">仅支持JPG、PNG、JPEG格式，文件小于4M</p>                                  
+                <div id="company-holder2"  > 没有预览可用 </div>
+                <a class="btn btn-default"  href="company-register3.html">提交资料</a>
+              </div>
+            </div>            
+
+        </div>
+      </div>     
+                   
+             
+       
+</div>
+<!-- 页面主体 结束-->
+<!-- 页脚 -->
+<div class="footer" id="FootLine"></div>
+<!-- 页脚 结束-->
+
+<!-- 通用浮出层 -->
+<!-- 登陆 -->
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+<!-- 登陆 结束-->
+
+<!-- 普通用户注册 -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" > 
+</div><!-- /.modal -->
+<!-- 普通用户注册 结束-->
+
+<!-- 企业用户登录 -->
+<div class="modal fade" id="companysigninModal" tabindex="-1" role="dialog" >  
+</div><!-- /.modal -->
+  <!-- 企业用户登录 结束-->
+
+<script src="js/distpicker.data.min.js"></script><!-- 城市选择js -->
+<script src="js/distpicker.min.js"></script><!-- 城市选择js -->
+<script type="text/javascript" src="js/main.js"></script>  <!-- 网站主要js -->  
+<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('.datepicker').datepicker({
+        // 日期选择插件参数配置
+        language: 'zh-CN'
+
+      });
+    })
+  </script>
+
+</body>
+</html>
