@@ -1,4 +1,4 @@
-angular.module('hellogalaxy').component('hello', {
+myApp.component('chuku', {
     template:  '<h3>{{$ctrl.greeting}} Solar System!</h3>' +
                '<button ng-click="$ctrl.toggleGreeting()">toggle greeting</button>',
              
