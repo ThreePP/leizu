@@ -211,7 +211,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('addnewtuihuo', {
     url: '/addnewtuihuo',
     templateUrl: 'templates/addnewtuihuo.html',
-    controller: 'chukuController'
+    controller: 'tuihuoController'
 
   });
 
