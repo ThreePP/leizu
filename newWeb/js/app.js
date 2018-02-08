@@ -165,7 +165,15 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
         // If we got here from a url of /contacts/42
         //expect($stateParams).toBe({id: "123456789"});
     }
-  });
+  })
+  .state('ranse.detail', {
+    url: "/detail/:id",
+    templateUrl: 'templates/ranse.html',
+    controller: function ($stateParams) {
+        // If we got here from a url of /contacts/42
+        //expect($stateParams).toBe({id: "123456789"});
+    }
+  });;
 
   $stateProvider.state('addranse', {
     url: "/addranse",
@@ -224,7 +232,8 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider.state('addnewruku', {
     url: '/addnewruku',
-    templateUrl: 'templates/addnewruku.html'
+    templateUrl: 'templates/addnewruku.html',
+    controller: 'chukuController'
 
   });
 
