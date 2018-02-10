@@ -1,6 +1,8 @@
 <div class="pagetop pagetop2">               
 <div class="pbtn contractbtn">
-  <a class="btn btn-default" ui-sref="djcon-fapiao-txt" ui-sref-active="active">查看预览</a>
+  <a href="" class="btn btn-default" ng-hide="bttnPreview" ng-click="showPreview()">查看预览</a>
+  <a href="" class="btn btn-default" ng-hide="bttnClose" ng-click="closePreview()">返回</a>
+  <button class="btn btn-default" onclick="jQuery.print('#printbox')">打印预览</button>
 </div>
 </div>
 <!-- 打印表格主体 -->
@@ -9,13 +11,13 @@
 <p>深圳市嫘祖丝绸有限公司</p>
 <p class="fapiaotitlen">发票签收回执单 </p>
 </div>
-<span class="pull-right htriqi">打印日期：<input type="text" class="form-control datepicker today noline" data-provide="datepicker" placeholder="请选择日期"></span></h2>            
+<span class="pull-right htriqi">打印日期：<input type="text" class="form-control datepicker today noline" data-provide="datepicker" placeholder="请选择日期" ng-model="invoiceDate"></span></h2>            
 
 <div class="fapiaoline">
   <div class="table"><span>TO：</span>
     <!-- 下拉菜单 -->
           <div class="dropdown ">
-              <input type="text" class="form-control text-left" placeholder="请填写" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+              <input type="text" class="form-control text-left" placeholder="请填写" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="toCompany"> 
               <div class="dropdown-menu hetongdiv" aria-labelledby="Khchose">
                 <div class="scrollbar-rail">
                 <ul>                           
@@ -29,47 +31,26 @@
                 </ul>
               </div>
               </div>
-            </div>
-            <!-- 下拉菜单 --></div>
+          </div>
+            <!-- 下拉菜单 -->
+  </div>
   <p><span>FROM：</span> 深圳市嫘祖丝绸有限公司</p>
 </div>
 <div class="partytwo fapiaoline">
-  <p>我司已收到贵司“深圳增值税专用发票”共计<input type="text" class="form-control " style="width:50px;"  placeholder="">份（每份两联：第二联抵扣联、第三联发票联），</p>
-  <p>票面金额合计：<input type="text" class="form-control " onchange="getMoney(this)" style="width:100px;" placeholder="">元（大写：<input id="big" type="text" class="form-control " style="width:150px;" placeholder="">人民币）</p>                  
+  <p>我司已收到贵司“深圳增值税专用发票”共计<input type="text" onchange="createInovices(this)" class="form-control " style="width:50px;"  placeholder="" ng-model='numbers'>份（每份两联：第二联抵扣联、第三联发票联），</p>
+  <p>票面金额合计：<input type="text" class="form-control " onkeyup="getMoney(this)" style="width:100px;" placeholder="" ng-model="amount">元（大写：<span id="big" style="width:300px;"></span>人民币）</p>                  
 </div>
 
 <div class="contarttitle"><span>发票号明细 </span>  </div>
 
     <table class="table table-bordered table-hover inputtable">                   
-    <tbody>
-        <tr>                       
-        <td align="center">1</td>
-        <td align="center">2</td>
-        <td align="center">3</td>
-        <td align="center">4</td>
-        <td align="center">5</td>
-        <td align="center">6</td>
-        <td align="center">7</td>
-        <td align="center">8</td>
-        <td align="center">9</td>
-        <td align="center">10</td>
+    <tbody id="invoicesBody">
+      <tr id="invoices">                       
+        
       </tr>
-        <tr>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-      </tr> 
-      <tr>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-        <td align="center"><input type="text" class="form-control" placeholder="" value=""></td>
-      </tr>                                           
+      <tr id="invoicesNumbers">
+        
+      </tr>                                        
     </tbody>               
   </table>                 
 
@@ -85,13 +66,54 @@
   <p>单位盖章：</p>
   <p>日期：</p>
 </div>
-
-
 </div>        
-<!-- 打印表格主体 结束-->           
-           
+<!-- 打印表格主体 结束-->
+
+<!-- 预览表格-->
+<div id="previewBox" class="tableprint" ng-hide="preview">
+    <h2 class="hetongtitle"><div class="pull-left">
+        <p>深圳市嫘祖丝绸有限公司</p>
+        <p class="fapiaotitlen">发票签收回执单 </p>
+        </div>
+        <span class="pull-right htriqi">打印日期：{{invoiceDate}}</h2>            
         
-<script type="text/javascript" src="js/jquery.scrollbar.js"></script> <!-- 自定义滚动条 -->
+        <div class="fapiaoline">
+          <div class="table"><span>TO：</span>
+            {{toCompany}}</div>
+          <p><span>FROM：</span> 深圳市嫘祖丝绸有限公司</p>
+        </div>
+        <div class="partytwo fapiaoline">
+          <p>我司已收到贵司“深圳增值税专用发票”共计{{number}}份（每份两联：第二联抵扣联、第三联发票联），</p>
+          <p>票面金额合计：<input type="text" class="form-control " style="width:100px;" placeholder="" value="{{amount}}">元（大写：<span id='bigPreview' style="width:300px;" placeholder="" ></span>人民币）</p>                  
+        </div>
+        
+        <div class="contarttitle"><span>发票号明细 </span>  </div>
+        
+            <table class="table table-bordered table-hover inputtable">                   
+            <tbody id="invoicesPreview">
+                                                        
+            </tbody>               
+          </table>                 
+        
+          
+          <div class="fapiaoline">
+          <p>请您对以上发票核对无误后，在单位处签字盖章确认，并于两个工作日内将扫描件发回邮箱“912606060@qq.com”</p>
+          <p>（五个工作日内未收到回执邮件视为已收到发票），谢谢！</p>
+          <p>请在增值税专用发票开出之日起180天内到税务机关认证。  </p>             
+        </div>
+        
+        <div class="fapiaoline text-right">
+          <p>核对签收：</p>
+          <p>单位盖章：</p>
+          <p>日期：</p>
+        </div>
+
+</div>
+
+<!-- 预览表格-->
+
+
+           
 <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
 <script type="text/javascript" src="js/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
   <script type="text/javascript">
@@ -101,15 +123,91 @@
         language: 'zh-CN'
 
       });
-     // 激活自定义滚动条
-         jQuery('.scrollbar-rail').scrollbar();
     });
+
+    function createInovices(obj){
+      $('#invoicesBody').empty();
+      //$('#invoicesNumbers').empty();
+      $('#invoicesPreview').empty();
+      var length = Number(obj.value);
+      var rows = length/10;
+      var cells = 10;
+      if(rows <= 1){
+        rows = 1;
+        cells = length;
+      }
+      for(i=0;i<=rows;i++){
+        var tr1 = document.createElement('tr');
+        var tr2 = document.createElement('tr');
+        //--预览---
+        var tr3 = document.createElement('tr');
+        var tr4 = document.createElement('tr');
+        if(length<(i+1)*cells){
+          cells = cells - ((i+1)*cells-length);
+        }
+        //alert(cells);
+        for(j=0;j<cells;j++){
+          //--每行10列--
+          var td1 = document.createElement('td');
+          td1.innerText = i*10+(j+1);
+          td1.style = "text-align:center;background:grey;font-color:black;";
+          var td2 = document.createElement('td');
+          var input = document.createElement('input');
+          input.style = "font-color:black;";
+          input["oninput"]= createInvoicesNumber;
+          input.className = 'form-control';
+          input.name = 'invoices';
+          input.setAttribute('data-index',i);
+          td2.append(input);
+
+           //--预览--
+           var td3 = document.createElement('td');
+           var td4 = document.createElement('td');
+           td3.innerText = td1.innerText;
+           td3.style= "text-align:center;background:grey;font-color:black;";
+           td4.style = "text-align:center;";
+           td4.className = 'previewTD';
+           tr1.append(td1);
+           tr2.append(td2);
+           tr3.append(td3);
+           tr4.append(td4);
+        }
+        
+        $('#invoicesBody').append(tr1);
+        $('#invoicesBody').append(tr2);
+
+        //--预览--
+        $('#invoicesPreview').append(tr3);
+        $('#invoicesPreview').append(tr4);
+ 
+      }
+      
+    }
+
+    function createInvoicesNumber(e){
+        var obj = e.target;
+        var invoices = document.getElementsByName('invoices');
+        var previewTDs = document.getElementsByClassName('previewTD');
+        for(i=0;i<invoices.length;i++){
+          previewTDs[i].innerText = invoices[i].value;
+          if(i == obj.getAttribute('data-index')){
+              var index = i+1;
+              for(k=index;k<invoices.length;k++){
+                invoices[k].value = Number(obj.value)+k;
+                previewTDs[k].innerText = invoices[k].value;
+              }
+          }
+        }
+        
+    }
 
     function getMoney(obj){
       var currency = convertCurrency(obj.value);
       var bigCurrency = document.getElementById('big');
       //alert(currency);
-      bigCurrency.value = currency;
+      bigCurrency.innerText = currency;
+
+      document.getElementById('bigPreview').innerText = bigCurrency.innerText;
 
     }
 

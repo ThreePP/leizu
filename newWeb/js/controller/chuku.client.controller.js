@@ -38,12 +38,10 @@ myApp.controller('chukuController', [ '$scope', function($scope) {
     
     $scope.remove = function(index){
         $scope.rows.splice(index,1);
+        //resetSum(index,subtotals);
     };
     
-    $scope.getSubTotal = function (obj,index){
-        console.log('changeSubTotal'+obj.value);
-        $scope.rows[index].subtotal = obj.value;
-    }
+    
     
 
 }]);

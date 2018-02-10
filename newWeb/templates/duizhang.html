@@ -98,17 +98,17 @@
 
 
       <!-- 上传存根预览,预览程序见main.js -->
-    <div class="cungen no-print"> 
-      <div class="pull-left"> 
-        <h3>对账单</h3> 
-        <div class="inputbox"><span>选择文件</span><input id="hetongUpload2" type="file" /></div> 
-        <div class="in2"><input type="text" id="qianshourenname" class="form-control" placeholder="签收人"></div>
-        <div class="in3"><input type="text" id="qianshoushijian" class="form-control datepicker" data-provide="datepicker" placeholder="签收时间"></div>
-        <p>仅支持JPG、PNG、JPEG格式，文件小于4M</p>
-      </div>                   
-      <div id="hetong-holder2"  class="pull-right"> 没有预览可用 </div>
-    </div>
-
+      <div class="cungen no-print"> 
+          <div class="pull-left"> 
+            <h3>出库单扫描存根</h3> 
+            <div class="inputbox"><span>选择文件</span><input id="fileUpload" type="file" /></div> 
+            <div class="in2"><input type="text" id="qianshourenname" onchange="qianshou()" class="form-control" placeholder="签收人"></div>
+            <div class="in3"><input type="text" id="qianshoushijian" class="form-control datepicker" data-provide="datepicker" placeholder="签收时间"></div>
+            <p>仅支持JPG、PNG、JPEG格式，文件小于4M</p>
+          </div>                   
+         <div id="image-holder"  class="pull-right"> 没有预览可用 </div>
+      </div>
+      
       <div class="contarttitle pt30"><span>付款记录 </span> <a href="javascript:void(0)"  data-toggle="modal" data-target="#fkjl" class="blue pull-right no-print">添加</a></div>
       <table class="table table-bordered table-hover inputtable">
         <thead>
@@ -190,3 +190,14 @@
       </table>
 </div>
 <!-- 打印表格主体 结束-->
+<script>
+    // 上传存根预览
+  $("#fileUpload").on('change', function () {
+    var thisbtn= $("#fileUpload");
+    var text = $(this).parents(".inputbox").children('span').text();
+     UpLoadImg(thisbtn,'#image-holder'); 
+     $(this).parents(".inputbox").children('span').text(text === '选择文件' ? '编辑' : '编辑'); 
+  
+  
+  });
+</script>
