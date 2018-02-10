@@ -17,7 +17,7 @@
   <div class="table"><span>TO：</span>
     <!-- 下拉菜单 -->
           <div class="dropdown ">
-              <input type="text" class="form-control text-left" placeholder="请填写" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="toCompany"> 
+              <input type="text" class="form-control text-left" style="color:black" placeholder="请填写" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="toCompany"> 
               <div class="dropdown-menu hetongdiv" aria-labelledby="Khchose">
                 <div class="scrollbar-rail">
                 <ul>                           
@@ -38,7 +38,7 @@
 </div>
 <div class="partytwo fapiaoline">
   <p>我司已收到贵司“深圳增值税专用发票”共计<input type="text" onchange="createInovices(this)" class="form-control " style="width:50px;"  placeholder="" ng-model='numbers'>份（每份两联：第二联抵扣联、第三联发票联），</p>
-  <p>票面金额合计：<input type="text" class="form-control " onkeyup="getMoney(this)" style="width:100px;" placeholder="" ng-model="amount">元（大写：<span id="big" style="width:300px;"></span>人民币）</p>                  
+  <p>票面金额合计：<input type="text" class="form-control " onkeyup="getMoney(this)" style="width:100px;color:black;" placeholder="" ng-model="amount">元（大写：<span id="big" style="width:300px;"></span>人民币）</p>                  
 </div>
 
 <div class="contarttitle"><span>发票号明细 </span>  </div>
@@ -153,7 +153,7 @@
           td1.style = "text-align:center;background:grey;font-color:black;";
           var td2 = document.createElement('td');
           var input = document.createElement('input');
-          input.style = "font-color:black;";
+          input.style = "color:black;";
           input["oninput"]= createInvoicesNumber;
           input.className = 'form-control';
           input.name = 'invoices';
@@ -164,7 +164,7 @@
            var td3 = document.createElement('td');
            var td4 = document.createElement('td');
            td3.innerText = td1.innerText;
-           td3.style= "text-align:center;background:grey;font-color:black;";
+           td3.style= "text-align:center;background:grey;color:black;";
            td4.style = "text-align:center;";
            td4.className = 'previewTD';
            tr1.append(td1);
