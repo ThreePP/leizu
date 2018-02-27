@@ -1,13 +1,17 @@
 <div class="pagetop">
     <h2>新建印花生产单</h2>
-    <div class="pbtn"><a ui-sref="ylyinhua" ui-sref-active="active" class="btn btn-default">查看预览</a></div>
+    <div class="pbtn">
+        <a href="" class="btn btn-default" ng-hide="bttnPreview" ng-click="showPreview()">查看预览</a>
+        <a href="" class="btn btn-default" ng-hide="bttnClose" ng-click="closePreview()">返回</a>
+        <button class="btn btn-default" onclick="jQuery.print('#printbox')">打印预览</button>
+    </div>
 </div>
 <!-- 打印表格主体 -->
 <div id="printbox" class="tableprint">
     <h1>深圳市嫘祖丝绸有限公司印花生产单</h1>
     
     <table class="table table-bordered table-hover inputtable">     
-      <caption><span class="pull-left"> No.42563584</span><span class="pull-right">2017年11月3日</span>
+      <caption><span class="pull-left"> No.42563584</span><input class="pull-right" ng-value="formData.formDate"/>
       <div class="clear"></div></caption>
       <thead>
         <tr>
@@ -43,9 +47,9 @@
               <!-- 花型说明图 结束-->
             </td>
             <td class="tbth" align="center">编号</td>
-            <td><!-- 下拉菜单 -->
+            <td><!-- 下拉菜单 ng-model="formData.number"-->
               <div class="dropdown chose100">
-                  <input type="text" class="form-control text-left" placeholder="请填写编号" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  <input name="number" ng-model="formData.number" type="text" class="form-control text-left" placeholder="请填写编号" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"/> 
                   <div class="dropdown-menu yinhuabh" aria-labelledby="Khchose">
                     <div class="scrollbar-rail">
                     <ul>                           
@@ -65,69 +69,120 @@
           </tr>
           <tr>
             <td align="center">品类</td>
-            <td><input type="text" class="form-control text-left" placeholder=""></td>
+            <td><input ng-model="formData.catergory" type="text" class="form-control text-left" placeholder=""></td>
           </tr>
           <tr>
             <td align="center">成分</td>
-            <td><input type="text" class="form-control text-left" placeholder=""></td>
+            <td><input ng-model="formData.material" type="text" class="form-control text-left" placeholder=""></td>
           </tr>
           <tr>
             <td align="center">克重</td>
-            <td><input type="text" class="form-control text-left" placeholder=""></td>
+            <td><input ng-model="formData.weight" type="text" class="form-control text-left" placeholder=""></td>
           </tr>
           <tr>
-            <td align="center">门幅</td>
-            <td><input type="text" class="form-control text-left" placeholder=""></td>
+            <td align="center" >门幅</td>
+            <td><input ng-model="formData.width" type="text" class="form-control text-left" placeholder=""></td>
           </tr>
           <tr>
-            <th class="p0" align="center" colspan="2"><span >花号</span><input type="text" class="form-control shortinput" placeholder=""></th>
+            <th class="p0" align="center" colspan="2"><span >花号</span><input ng-model="formData.pattern" type="text" class="form-control shortinput" placeholder=""></th>
           </tr>
           <tr>
             <td align="center" class="sytd" colspan="2">参考色样</td>
           </tr>
           <tr>
             <td align="center">数量</td>
-            <td class="el-checkbox longlabel"> 
-              <input type="checkbox" name="checkbox1" id="1_1" value="option"><label class="el-checkbox-style " for="1_1"><span class="tablespan">ABC</span> </label>
-              <input type="checkbox" name="checkbox2" id="1_2" value="option"><label class="el-checkbox-style " for="1_2"><span class="tablespan"><input type="text" class="form-control shortinput2" placeholder="">米 </span></label>
+            <td class="el-checkbox longlabel">
+            <div class="form-group">
+              <label class="el-checkbox-style " for="1_1"> 
+              <input ng-model="formData.quantity" value="ABC" type="radio" style="-webkit-appearance: checkbox; appearance: checkbox;" name="ABC" id="1_1">ABC
+              </label>
+              <label class="el-checkbox-style" for="1_2">
+              <input ng-model="formData.quantity" value="米" type="radio" style="-webkit-appearance: checkbox; appearance: checkbox;"  name="米" id="1_2">
+              <input type="text" ng-model="formData.meter" class="form-control shortinput2" placeholder="">米
+              </label>
+            </div>
             </td>
             <td class="tbth" align="center">对色</td>
             <td class="el-checkbox longlabel">
-              <input type="checkbox" name="checkbox1" id="1_3" value="option"><label class="el-checkbox-style " for="1_3"><span class="tablespan">自然光</span> </label> 
-                <input type="checkbox" name="checkbox1" id="1_4" value="option"><label class="el-checkbox-style " for="1_4"><span class="tablespan">D65光源</span></label>
+              <div class="form-group">
+                <label class="el-checkbox-style " for="1_3"> 
+                <input ng-model="formData.color" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="nature" id="1_3" value="自然光">自然光
+                </label>
+                <label class="el-checkbox-style " for="1_4"> 
+                <input ng-model="formData.color" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="D65" id="1_4" value="D65光源">D65光源
+                </label>
+              </div>
               </td>
             <td align="center">交期</td>
-            <td><input type="text" class="form-control text-left dayadd7 datepicker" data-provide="datepicker" placeholder="选择时间"></td>
+            <td>
+              <div class="form-group">
+              <label>
+              <input type="text" class="form-control text-left dayadd7 datepicker" data-provide="datepicker" placeholder="选择时间" ng-model="formData.dueDate">
+              </label>  
+            </div>
+            </td>
           </tr>
           <tr>
             <td align="center">色牢</td>
-            <td class="el-checkbox longlabel">  <input type="checkbox" name="checkbox1" id="1_5" value="option"><label class="el-checkbox-style " for="1_5"><span class="tablespan">国标三级 </span></label></td>
+            <td class="el-checkbox longlabel">
+              <div class="form-group">
+              <label class="el-checkbox-style " for="1_5"> 
+                <input ng-model="formData.colorlevel" type="radio" name="colorlevel" id="1_5" value="国标三级">
+                国标三级
+              </label>
+              </div>
+            </td>
             <td align="center">手感</td>
-            <td class="el-checkbox longlabel">  
-              <input type="checkbox" name="checkbox1" id="1_6" value="option"><label class="el-checkbox-style " for="1_6"><span class="tablespan">柔软</span>  </label>  
-                <input type="checkbox" name="checkbox1" id="1_7" value="option"><label class="el-checkbox-style " for="1_7">  <span class="tablespan">正常</span>  </label>  
-                <input type="checkbox" name="checkbox1" id="1_8" value="option"><label class="el-checkbox-style " for="1_8"> <span class="tablespan">硬挺 </span></label>
-              </td>
+            <td>
+                <div id='feel'>
+                  <label class="el-checkbox">   
+                    <input ng-model="formData.feel" type="checkbox" name="feel" id="1_6" value="柔软">
+                    <span class="el-checkbox-style" for="1_6"></span>
+                    <label for="1_6">柔软</label>   
+                  </label>
+                  <label class="el-checkbox">
+                    <input ng-model="formData.feel" type="checkbox" name="feel" id="1_7" value="正常">
+                    <span class="el-checkbox-style"  for="1_7"></span>
+                    <label for="1_7">正常</label> 
+                  </label>
+                  <label class="el-checkbox">
+                    <input ng-model="formData.feel" type="checkbox" name="feel" id="1_8" value="硬挺">
+                    <span class="el-checkbox-style " for="1_8"></span>
+                    <label for="1_8">硬挺</label>
+                  </label>
+              </div>
+            </td>
             <td align="center">纰裂</td>
-            <td class="el-checkbox longlabel">  <input type="checkbox" name="checkbox1" id="1_9" value="option"><label class="el-checkbox-style " for="1_9"><span class="tablespan">国标三级</span> </label></td>
+            <td class="el-checkbox longlabel">
+              <div class="form-group">
+                <label class="el-checkbox-style " for="1_9">  
+                <input ng-model="formData.brokenlevel" type="radio" name="brokenlevel" id="1_9" value="国标三级">国标三级
+                </label>
+              </div>
+            </td>
           </tr>
           <tr>
             <td align="center">说明</td>
             <td class="p12" colspan="5" id="Yhbox">
               <div class="tbline el-checkbox longlabel">
-                <span class="sblack">稿</span> 
-                <input type="checkbox" name="checkbox1" id="1_10" value="option"><label class="el-checkbox-style " for="1_10">  <span class="tablespan">无花稿，需描稿分色</span>  </label> 
-                  <input type="checkbox" name="checkbox1" id="1_11" value="option"><label class="el-checkbox-style " for="1_11">  <span class="tablespan">有花稿，仅调色，花稿已经命名 FN-0304发送至邮箱912606060@qq.com </span>  </label>
-                
+                <div class="form-group">
+                  <span class="sblack">稿</span> 
+                  <label class="el-checkbox-style " for="1_10"><input ng-model="formData.draft" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="noneColor" id="1_10" value="无花稿，需描稿分色">无花稿，需描稿分色</label> 
+                  <label class="el-checkbox-style " for="1_11"> <input ng-model="formData.draft" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="color" id="1_11" value="有花稿，仅调色，花稿已经命名 FN-0304发送至邮箱912606060@qq.com">有花稿，仅调色，花稿已经命名 FN-0304发送至邮箱912606060@qq.com </label>
+                </div>
               </div>
               <div class="tbline  el-checkbox longlabel">
-                <span class="sblack">底</span>  
-                <input type="checkbox" name="checkbox1" id="1_12" value="option"><label class="el-checkbox-style " for="1_12">  <span class="tablespan">坯布本白底色（底色空）</span>  </label>
-                <input type="checkbox" name="checkbox1" id="1_13" value="option"><label class="el-checkbox-style " for="1_13">  <span class="tablespan">漂白底色</span>  </label>
-                <input type="checkbox" name="checkbox1" id="1_14" value="option"><label class="el-checkbox-style " for="1_14">  <span class="tablespan">染色底色：</span>  </label><input type="text" class="form-control shortinput" placeholder="" value="黄色（16-0304）">                           
+                <div class="form-group">
+                <span class="sblack">底</span>                
+                <label class="el-checkbox-style " for="1_12"><input ng-model="formData.bgcolor" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="noneBg" id="1_12" value="坯布本白底色（底色空）">  坯布本白底色（底色空） </label>
+                <label class="el-checkbox-style " for="1_13"><input ng-model="formData.bgcolor" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="whiteBg" id="1_13" value="漂白底色">  漂白底色 </label>
+                <label class="el-checkbox-style " for="1_14"><input ng-model="formData.bgcolor" style="-webkit-appearance: checkbox; appearance: checkbox;" type="radio" name="colorBg" id="1_14" value="染色底色">  染色底色：   
+                <input type="text" ng-if="formData.bgcolor=='染色底色'" ng-model="formData.bgColorDetail" class="form-control shortinput" placeholder="" value="黄色（16-0304）">                          
+                </label>
+              </div>  
               </div> 
               <div class="tbline">
-                <span class="sblack">距</span> <span class="sright"><input type="text" class="form-control" placeholder=""></span> 
+                <span class="sblack">距</span> <span class="sright"><input ng-model="formData.distance" type="text" class="form-control" placeholder=""></span> 
               </div> 
               
             </td>
@@ -136,7 +191,7 @@
             <td class="p12" colspan="2">客户:                          
               <!-- 下拉菜单 -->
               <div class="dropdown namelist">
-                  <input type="text" class="form-control text-left" placeholder="请输入姓名" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  <input ng-model="formData.customer" type="text" class="form-control text-left" placeholder="请输入姓名" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                   <div class="dropdown-menu " aria-labelledby="Khchose">
                     <div class="scrollbar-rail">
                     <ul>                           
@@ -157,7 +212,7 @@
             <td class="p12" colspan="2">生产:
             <!-- 下拉菜单 -->
               <div class="dropdown namelist">
-                  <input type="text" class="form-control text-left" placeholder="请输入姓名" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  <input ng-model="formData.provider" type="text" class="form-control text-left" placeholder="请输入姓名" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                   <div class="dropdown-menu " aria-labelledby="Khchose">
                     <div class="scrollbar-rail">
                     <ul>                           
@@ -180,9 +235,154 @@
     
 </div>
 <!-- 打印表格主体 结束-->
+
+<!-- 预览-->
+<div id="previewYinhua" class="tableprint" ng-hide="preview">
+    <h1>深圳市嫘祖丝绸有限公司印花生产单</h1>
+    
+    <table class="table table-bordered table-hover inputtable">     
+      <caption><span class="pull-left"> No.42563584</span><span class="pull-right">2017年11月3日</span>
+      <div class="clear"></div></caption>
+      <thead>
+        <tr>
+          <th class="tbth">标记</th>
+          <th colspan="3">花型说明图</th>
+          <th colspan="2">底坯</th>
+        </tr>
+      </thead>
+      <tbody>                   
+          <tr>
+            <td rowspan="7" class="tdtop">
+              <span class="sblack">稿</span>
+              <span class="sblack">底</span>
+              <span class="sblack">距</span>
+              <a class="sgray" onclick="addMarker(this)">1</a>
+              <a class="sgray" onclick="addMarker(this)">2</a>
+              <a class="sgray" onclick="addMarker(this)">3</a>
+              <a class="sgray" onclick="addMarker(this)">4</a>
+              <a class="sgray" onclick="addMarker(this)">5</a>
+              <a class="sgray" onclick="addMarker(this)">6</a>
+              <a class="sgray" onclick="addMarker(this)">7</a>
+              <a class="sgray" onclick="addMarker(this)">8</a>
+              <a class="sgray" onclick="addMarker(this)">9</a>
+            </td>
+            <td colspan="3" rowspan="7">
+              <!-- 花型说明图 -->
+              <div class="patternbox" >
+                 <div id="map-image"></div>
+                  
+                  
+              </div>
+              <!-- 花型说明图 结束-->
+            </td>
+            <td class="tbth" align="center">编号</td>
+            <td><!-- 下拉菜单 ng-model="formData.number"-->
+              {{formData.number}}
+            </td>
+          </tr>
+          <tr>
+            <td align="center">品类</td>
+            <td>{{formData.catergory}}</td>
+          </tr>
+          <tr>
+            <td align="center">成分</td>
+            <td>{{formData.material}}</td>
+          </tr>
+          <tr>
+            <td align="center">克重</td>
+            <td>{{formData.weight}}</td>
+          </tr>
+          <tr>
+            <td align="center" >门幅</td>
+            <td>{{formData.width}}</td>
+          </tr>
+          <tr>
+            <th class="p0" align="center" colspan="2"><span >花号</span><input ng-value="formData.pattern" type="text" class="form-control shortinput" placeholder=""></th>
+          </tr>
+          <tr>
+            <td align="center" class="sytd" colspan="2">参考色样</td>
+          </tr>
+          <tr>
+            <td align="center">数量</td>
+            <td class="el-checkbox longlabel">
+            <span ng-if="formData.quantity=='米'">
+              {{formData.meter}}
+            </span>
+            {{formData.quantity}}
+            </td>
+            <td class="tbth" align="center">对色</td>
+            <td class="el-checkbox longlabel">
+              {{formData.color}}
+              </td>
+            <td align="center">交期</td>
+            <td>
+              {{formData.dueData}}
+            </td>
+          </tr>
+          <tr>
+            <td align="center">色牢</td>
+            <td class="el-checkbox longlabel">
+               {{formData.colorlevel}} 
+            </td>
+            <td align="center">手感</td>
+            <td class="el-checkbox longlabel">
+              {{formData.feel}}
+            </td>
+            <td align="center">纰裂</td>
+            <td class="el-checkbox longlabel">
+              {{formData.brokenlevel}}
+            </td>
+          </tr>
+          <tr>
+            <td align="center">说明</td>
+            <td class="p12" colspan="5" id="YhboxPreview">
+              <div class="tbline el-checkbox longlabel">
+              <span class="sblack">稿</span> 
+               {{formData.draft}}
+              </div>
+              <div class="tbline  el-checkbox longlabel">
+                <span class="sblack">底</span>
+                {{formData.bgcolor}}
+              </div> 
+              <div class="tbline">
+                <span class="sblack">距</span> <span class="sright"><input ng-value="formData.distance" type="text" class="form-control" placeholder=""></span> 
+              </div> 
+              
+            </td>
+          </tr>
+          <tr>
+            <td class="p12" colspan="2">客户:                          
+            {{formData.customer}}
+            </td>
+            <td class="p12" colspan="2">排单:<b>张维怡</b></td>
+            <td class="p12" colspan="2">生产:
+            {{formData.provider}}
+            </td>
+          </tr>
+      </tbody>               
+    </table>
+</div>
                
 <script type="text/javascript" src="js/jquery.scrollbar.js"></script> <!-- 自定义滚动条 -->
 <script type="text/javascript">
+  /*
+  $(function(){  
+    $("input[name='feel']").click(function(){ 
+      
+      $("input[name='feel']").each(function(){
+
+        if($(this).is(":checked"))  
+        {  
+          //alert($(this).siblings().length);
+          alert($(this).val());
+          $(this).parent().siblings().find('input').prop('checked',false);
+        }
+        alert($(this).prop('checked'));  
+      });  
+    });  
+  });*/
+  
+  
   $(function(){
     $('.datepicker').datepicker({
       // 日期选择插件参数配置
@@ -220,7 +420,6 @@ var Effects = function(c1,c2){
           var northEast = map.unproject([w,0],map.getMaxZoom()-1);
           var bounds = new L.LatLngBounds(southWest,northEast);
           L.imageOverlay(url,bounds).addTo(map);
-          //markerGroup.addTo(map);
           map.setMaxBounds(bounds);
           
           var markers = new Array();
@@ -246,7 +445,6 @@ var Effects = function(c1,c2){
             marker.on('dragstart', dragStartHandler);
             marker.on('drag', dragHandler);
             marker.on('dragend', dragEndHandler);
-            //popup.on('click', storeData);
             
             return marker;
           }
@@ -332,71 +530,80 @@ var Effects = function(c1,c2){
 
 
 function addMarker(obj){
-  
-  var checkMarker = true;
-  for(i=0;i<numberMarkers.length;i++){
-    if(numberMarkers[i].index==obj.innerText){
-      checkMarker = false;
-      alert(numberMarkers[i].index);
-      var number = "#number"+obj.innerText;
-      $(number).remove();
-      obj.className = 'sgray';
-      //numberMarkers.splice(indexOf(obj.innerText),1);
-      
-      map.removeLayer(numberMarkers[i].marker);
-      
-      numberMarkers = $.grep(numberMarkers, function(e){ 
-        return e.index != obj.innerText; 
-      });
-      
-      
-    }
-  }
-  if(checkMarker){
-    obj.className = 'sblack';
-    if(map){
-      var divIcon = L.divIcon({
-        className:'my-div-icon',
-        html:'<div class="sblack">'+obj.innerText+'</div>'
-        });
- 
-      var marker = new L.Marker(map.getCenter(), {icon:divIcon,title:obj.innerText,draggable:true});
-      //marker.addTo(markerGroup);
-      map.addLayer(marker);
-      var markerObj = {index:obj.innerText, marker:marker};
-      numberMarkers.push(markerObj);
 
-    }else{
-      alert('请先选择图片');
-    }
-
-    //add descriptions 
-    $("#Yhbox").append('<div class="tbline" id="number'+obj.innerText+'">'+
-        '<span class="sblack">'+obj.innerText+'</span><span><input type="text" class="form-control" placeholder=""></span>'+ 
-    '</div>');
+  if(map!=null){
+      var checkMarker = true;
+      for(i=0;i<numberMarkers.length;i++){
+        if(numberMarkers[i].index==obj.innerText){
+          checkMarker = false;
+          //alert(numberMarkers[i].index);
+          var number = "#number"+obj.innerText;
+          $(number).remove();
+          obj.className = 'sgray';
+          map.removeLayer(numberMarkers[i].marker);
+          numberMarkers = $.grep(numberMarkers, function(e){ 
+            return e.index != obj.innerText; 
+          });  
+        }
+      }
+      if(checkMarker){
+        obj.className = 'sblack';
+        if(map){
+          var divIcon = L.divIcon({
+            className:'my-div-icon',
+            html:'<div class="sblack">'+obj.innerText+'</div>'
+            });
     
+          var marker = new L.Marker(map.getCenter(), {icon:divIcon,title:obj.innerText,draggable:true});
+          map.addLayer(marker);
+          var markerObj = {index:obj.innerText, marker:marker};
+          numberMarkers.push(markerObj);
 
-  }
-}
+        }else{
+          alert('请先选择图片');
+        }
 
-function numberValue(obj){
-  //alert(obj.value);
-  var value = obj.value.split('cm');
-  obj.value = Number(value[0]).toFixed(1)+' cm';
+        //add descriptions 
+        $("#Yhbox").append('<div class="tbline" id="number'+obj.innerText+'">'+
+            '<span class="sblack">'+obj.innerText+'</span><span><input id="decriptions-'+obj.innerText+'" type="text" ng-model="formData.descriptions.'+obj.innerText+'" class="form-control" placeholder=""/></span>'+ 
+        '</div>');
+
+        $("#YhboxPreview").append('<div class="tbline" id="number'+obj.innerText+'">'+
+            '<span class="sblack">'+obj.innerText+'</span><span id="preview-descriptions-'+obj.innerText+'"></span>'+ 
+        '</div>');
+        //var elementId = '#descriptions-preview'+obj.innerText;
+        $("input[id^='descriptions-]'").change(previewDescription(obj.innerText));
+        
+
+      }
+    }
+
+    function numberValue(obj){
+      var value = obj.value.split('cm');
+      obj.value = Number(value[0]).toFixed(1)+' cm';
+    }
+    
+    function previewDescription(index){
+        alert('this is preview mark '+index);
+        var orign = '#descriptions-'+index;
+        var target = '#preview-descriptions-'+index;
+        $(target).text($(orign).val());
+    }
+    
 }
 /*
-function preview(){
-  leafletImage(map, function(err, canvas) {
-    // now you have canvas
-    // example thing to do with that canvas:
-    var img = document.createElement('img');
-    var dimensions = map.getSize();
-    img.width = dimensions.x;
-    img.height = dimensions.y;
-    img.src = canvas.toDataURL();
-    document.getElementById('images').innerHTML = '';
-    document.getElementById('images').appendChild(img);
-  });
-}
+leafletImage(map, function(err, canvas) {
+  // now you have canvas
+  // example thing to do with that canvas:
+  var img = document.createElement('img');
+  var dimensions = map.getSize();
+  img.width = dimensions.x;
+  img.height = dimensions.y;
+  img.src = canvas.toDataURL();
+  document.getElementById('previewbox').innerHTML = '';
+  document.getElementById('previewbox').appendChild(img);
+
+});
 */
+
 </script>

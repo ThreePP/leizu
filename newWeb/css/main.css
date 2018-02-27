@@ -192,9 +192,9 @@ li{list-style: none;}
 .el-checkbox > input[type="checkbox"] + .el-checkbox-style:hover:before {  border-color: #000;}
 .el-radio > input[type="radio"] + .el-radio-style:before,
 .el-checkbox > input[type="checkbox"] + .el-checkbox-style:before {
-  position: absolute;  top: 5px;  left: 0;  display: inline-block;  width: 18px;  height:18px;  content: '';  border: 1px solid #000;}
+  position: absolute;  top: 0;  left: 4px;  display: inline-block;  width: 18px;  height:18px;  content: '';  border: 1px solid #000;}
 .el-radio > input[type="radio"] + .el-radio-style:after,
-.el-checkbox > input[type="checkbox"] + .el-checkbox-style:after {
+.el-checkbox > input[type="checkbox"]:checked + .el-checkbox-style:after {
   position: absolute;  display: none;  content: '';}
 .el-radio > input[type="radio"][disabled] + .el-radio-style,
 .el-checkbox > input[type="checkbox"][disabled] + .el-checkbox-style {  cursor: not-allowed;  color: #000;}
@@ -214,26 +214,34 @@ li{list-style: none;}
 .el-checkbox > input[type="checkbox"]:checked + .el-checkbox-style:after {  display: block;}
 .el-radio > input[type="radio"] + .el-radio-style:before {  border-radius: 50%;}
 .el-radio > input[type="radio"] + .el-radio-style:after {
-  top: 10px;
-  left: 5px;
-  width:8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #000;
+  top: 0.1em;
+  left: 0em;
+  width: 1.5em;
+  height: 1.2em;
+  /*transform: rotate(45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;*/
+  background: url(../images/cho.png) no-repeat;
 }
 .el-radio > input[type="radio"]:checked + .el-radio-style:before {  border: 1px solid #000;}
 .el-radio > input[type="radio"]:checked[disabled] + .el-radio-style:before {  border: 1px solid #000;}
 .el-radio > input[type="radio"]:checked[disabled] + .el-radio-style:after {  background: #000;}
 .el-checkbox > input[type="checkbox"] + .el-checkbox-style:after {
-    top: 0.1em;
+    
     left: 0em;
     width: 1.5em;
     height: 1.2em;
     /*transform: rotate(45deg);
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;*/
-    background: url(../images/cho.png) no-repeat;
+    /*background: url(../images/cho.png) no-repeat;*/
 }
+.el-checkbox > input[type="checkbox"]:checked + .el-checkbox-style:after {
+    
+  background: url(../images/cho.png) no-repeat;
+}
+
+
 
 /*自定义滚动条*/
 .scrollbar-rail > .scroll-element,

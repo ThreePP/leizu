@@ -298,7 +298,7 @@ td.user-name {	text-transform: capitalize;}
 .pflistbox .pfinfo{width:100%;position: absolute;bottom: 0;background: #000;color: #fff;padding:0 0 0 10px;opacity: 0.7;filter:alpha(opacity=70);height:30px;line-height: 24px;}
 .pflistbox .pfinfo span{line-height: 30px;}
 .pflistbox .el-checkbox > input[type="checkbox"] + .el-checkbox-style{padding:0 0 0 20px;height: 1.9em;}
-.pflistbox .el-checkbox > input[type="checkbox"] + .el-checkbox-style:before{ width:14px;height:14px;   border: 1px solid #fff;top:5px;}
+.pflistbox .el-checkbox > input[type="checkbox"] + .el-checkbox-style:before{ width:14px;height:14px;   border: 1px solid #fff;top:0;}
 .pflistbox .el-checkbox > input[type="checkbox"] + .el-checkbox-style:after{  width: 14px;height:14px;border:1px solid #f77f26;  transform: rotate(0deg);background: url(../images/checkbox.png) no-repeat;  left: 0px;top: 5px;}
 .deletepf{float:left;width:100%;background: #ececec;padding:0 20px;}
 .pandf .el-radio > input[type="radio"] + .el-radio-style:before{width:14px;height: 14px;top:10px;}
@@ -475,7 +475,7 @@ td.user-name {	text-transform: capitalize;}
 .memberline .tab-content .threestage p{margin: 0 0 13px 0;}
 
 /*汇总表*/
-.table .el-checkbox > input[type="checkbox"] + .el-checkbox-style:before{width: 10px;  height: 10px;  border: 1px solid #000; top: 5px;}
+.table .el-checkbox > input[type="checkbox"] + .el-checkbox-style:before{width: 10px;  height: 10px;  border: 1px solid #000; top: 2px; left:4px;}
 /*.table .el-checkbox > input[type="checkbox"] + .el-checkbox-style:after{ border-right: 2px solid #000; border-bottom: 2px solid #000;}*/
 
 #gkrk p{padding:10px 0;}
